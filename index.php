@@ -34,11 +34,11 @@
                     <a class="nav-link" href="index.php">Inicio</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="vistas/nosotros/nosotros.php">Nosotros</a>
+                    <a class="nav-link" href="vistas/nosotros/nosotros.php">Estilos</a>
                     <!-- <a class="nav-link" href="Cliente/login/frm_login.php">Iniciar Sesion</a> -->
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="vistas/servicios/servicios.php">Servicios</a>
+                    <a class="nav-link" href="vistas/servicios/servicios.php">Nosotros</a>
                 </li>
                 <div class="btn-group">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
@@ -54,7 +54,6 @@
     </nav>
 
     <section class="sect-index">
-
         <div class="bg-index">
             <div class="img-titulo text-center">
                 <img src="img/logo-03.png" style="width: 40%;">

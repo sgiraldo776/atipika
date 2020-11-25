@@ -7,7 +7,6 @@
     border-radius: 0.5rem;
 }
 
-
 /* Navbar */
 
 .navbar {
@@ -37,10 +36,12 @@ nav img {
 nav a {
     color: #ffffff !important;
     text-decoration: none;
+    transition: 0.2s;
 }
 
 nav a:hover {
     color: #c9c9c9 !important;
+    transition: 0.2s;
 }
 
 .bg-ind {
@@ -64,6 +65,7 @@ nav a:hover {
     background-color: #960CF2 !important;
     color: #ffffff;
     text-decoration: none;
+    transition: 0.5s;
 }
 
 .dropdown-menu a {
@@ -87,6 +89,39 @@ nav a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.5s;
+}
+
+.bg-index::before {
+    display: block;
+    position: absolute;
+    content: " ";
+    background: #fff;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.bg-index::after {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+    transform: translate(0, -50%);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    font-family: 'FontAwesome';
+    content: '\f105';
+    text-align: center;
+    font-size: 3.125rem;
+    color: #555;
 }
 
 @media only screen and (max-width: 992px) {
@@ -116,21 +151,25 @@ nav a:hover {
 .redes i {
     color: #770ABF;
     font-size: 2rem;
+    transition: 0.2s;
 }
 
 .redes i:hover {
     color: #B556F4;
     font-size: 2.2rem;
+    transition: 0.2s;
 }
 
 .contac a {
     text-decoration: none;
     color: #770ABF;
+    transition: 0.2s;
 }
 
 .contac a:hover {
     color: #B556F4;
     text-decoration: none;
+    transition: 0.2s;
 }
 
 .copy {
