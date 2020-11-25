@@ -1,0 +1,114 @@
+/*Utiilidades*/
+.btn-invi {
+    background-color: rgba(0, 0, 0, 0);
+    color: #ffffff;
+    border: none;
+    border-radius: 0.5rem;
+}
+
+/* Index */
+
+.navbar {
+    padding: 1rem;
+}
+
+nav img {
+    width: 80%;
+}
+
+@media only screen and (max-width: 992px) {
+    nav img {
+        width: 130%;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    nav img {
+        width: 60%;
+    }
+}
+
+.bg-nav {
+    background-color: #552873;
+}
+
+nav a {
+    color: #ffffff !important;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #c9c9c9 !important;
+}
+
+.bg-ind {
+    background-image: url(../img/index-img.jpg);
+    height: 500px;
+    opacity: 0.9;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.toggler{
+    background-color: #960CF2;
+}
+
+.dropdown-toggle:hover {
+    color: #c9c9c9;
+}
+
+.dropdown-item:hover {
+    background-color: #960CF2 !important;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.dropdown-menu a {
+    text-decoration: none;
+}
+
+/*Imagen de titulo*/
+.img-tit{
+    width: 80%;
+}
+
+/*Destacado*/
+.destacado{
+    color: #552873;
+}
+
+
+/* Footer */
+
+.footer {
+    padding: 2rem;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: #770ABF;
+    background-color: #ffffff;
+}
+
+.redes i {
+    color: #770ABF;
+    font-size: 2rem;
+}
+
+.redes i:hover {
+    color: #B556F4;
+    font-size: 2.2rem;
+}
+
+.contac a {
+    text-decoration: none;
+    color: #770ABF;
+}
+
+.contac a:hover {
+    color: #B556F4;
+    text-decoration: none;
+}
+
+.copy {
+    color: #770ABF;
+}
