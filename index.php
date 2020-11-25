@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
 
     <link rel="stylesheet" href="css/estilo.css">
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-nav">
         <div class="col-sm-3 text-center">
@@ -51,10 +53,11 @@
         </div>
     </nav>
 
-    <section class="mt-5 mb-5">
-        <div class="container text-center">
+    <section class="sect-index">
+
+        <div class="bg-index">
             <div class="img-titulo text-center">
-                <img class="img-tit" src="img/logo-01.png" alt="">
+                <img src="img/logo-03.png" style="width: 40%;">
             </div>
         </div>
     </section>
@@ -67,7 +70,7 @@
             <div class="row text-center">
                 <div class="col-md-4 col-lg-4 col-sm-12 text-center">
                     <h3>Destacado 1</h1>
-                    
+
                 </div>
                 <div class="col-md-4 col-lg-4 col-sm-12 text-center">
                     <h3>Destacado 2</h1>
@@ -94,7 +97,7 @@
             </div>
         </div>
     </footer>
-        
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
@@ -102,4 +105,5 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
+
 </html>

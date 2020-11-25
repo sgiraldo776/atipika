@@ -1,4 +1,5 @@
 /*Utiilidades*/
+
 .btn-invi {
     background-color: rgba(0, 0, 0, 0);
     color: #ffffff;
@@ -6,7 +7,8 @@
     border-radius: 0.5rem;
 }
 
-/* Index */
+
+/* Navbar */
 
 .navbar {
     padding: 1rem;
@@ -50,7 +52,7 @@ nav a:hover {
     background-size: cover;
 }
 
-.toggler{
+.toggler {
     background-color: #960CF2;
 }
 
@@ -68,13 +70,35 @@ nav a:hover {
     text-decoration: none;
 }
 
-/*Imagen de titulo*/
-.img-tit{
-    width: 80%;
+
+/* Index */
+
+.sect-index {
+    width: 100%;
+    padding: 3rem 5rem;
 }
 
-/*Destacado*/
-.destacado{
+.bg-index {
+    background-image: url(../img/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media only screen and (max-width: 992px) {
+    .sect-index {
+        padding: 0;
+    }
+    .bg-index {
+        height: 30vh
+    }
+}
+
+.destacado {
     color: #552873;
 }
 
