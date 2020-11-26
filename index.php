@@ -36,7 +36,7 @@
                     <a class="nav-link" href="index.php">Inicio</span></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="vistas/nosotros/nosotros.php">Estilos</a>
+                    <a class="nav-link" href="vistas/estilos/estilos.php">Estilos</a>
                     <!-- <a class="nav-link" href="Cliente/login/frm_login.php">Iniciar Sesion</a> -->
                 </li>
                 <li class="nav-item">
