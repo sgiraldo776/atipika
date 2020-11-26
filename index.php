@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
@@ -63,19 +65,15 @@
 
     <section>
         <div class="container destacado">
-            <div class="text-center ">
+            <div class="text-center titulo">
                 <h1>Destacado</h1>
             </div>
             <div class="row text-center">
-                <div class="col-md-4 col-lg-4 col-sm-12 text-center">
-                    <h3>Destacado 1</h1>
-
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12 text-center">
-                    <h3>Destacado 2</h1>
-                </div>
-                <div class="col-md-4 col-lg-4 col-sm-12 text-center">
-                    <h3>Destacado 3</h1>
+                <div class="card-img" style="background-image: url(img/UWU.jpg);">
+                    <div class="card-recolor">
+                        <h2>Destacado 1</h2>
+                        <a class="personalizar" href=""><button class="btn btn-primary">Personalizar</button></a>
+                    </div>
                 </div>
             </div>
         </div>

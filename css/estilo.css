@@ -1,3 +1,8 @@
+*{
+    transition: 0.3s;
+    font-family: 'Raleway', sans-serif;
+}
+
 /*Utiilidades*/
 
 .btn-invi {
@@ -92,38 +97,6 @@ nav a:hover {
     transition: 0.5s;
 }
 
-.bg-index::before {
-    display: block;
-    position: absolute;
-    content: " ";
-    background: #fff;
-    opacity: 0;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-}
-
-.bg-index::after {
-    display: block;
-    position: absolute;
-    width: 100%;
-    left: 0;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-    transform: translate(0, -50%);
-    opacity: 0;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-    font-family: 'FontAwesome';
-    content: '\f105';
-    text-align: center;
-    font-size: 3.125rem;
-    color: #555;
-}
-
 @media only screen and (max-width: 992px) {
     .sect-index {
         padding: 0;
@@ -133,8 +106,47 @@ nav a:hover {
     }
 }
 
-.destacado {
+
+/* Destacado*/
+
+.destacado .titulo{
     color: #552873;
+    font-weight: 700;
+}
+
+.card-img{
+    border-radius: 0;
+    width: 20%;
+    height: 300px;
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 20px;
+    color: white;
+    font-weight: 300;
+}
+
+.card-img::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 10px;
+    background-color: #552873;
+}
+
+.card-recolor{
+    height: 100%;
+}
+
+.personalizar{
+    opacity: 0%;
+}
+
+.card-recolor:hover{
+    background-color: rgba(87, 28, 114, 0.541);
+}
+
+.card-recolor:hover .personalizar{
+    opacity: 100%;
 }
 
 
