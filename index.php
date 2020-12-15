@@ -1,3 +1,21 @@
+<?php
+    include('conexion.php');
+    session_start();
+        if(!isset($_SESSION['rol'])){
+            include 'includes/header/header_inicio.php';
+        }else{
+            if($_SESSION['rol'] !=1 ){
+                if($_SESSION['rol'] =2 ){
+                    include 'includes/header/header_usuario.php';
+                }else {
+                    include 'includes/header/header_inicio.php';
+                }
+            }else {
+                include 'includes/header/header_admin.php';
+            }            
+        }
+
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,40 +38,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
-        <div class="col-sm-3 text-center">
-            <a class="navbar-brand" href="index.php">
-                <img src="img/logo-02.png" alt="">
-            </a>
-        </div>
-
-        <button class="navbar-toggler toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav hola ml-auto">
-                <li class="nav-item ">
-                    <a class="nav-link" href="index.php">Inicio</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="vistas/estilos/estilos.php">Estilos</a>
-                    <!-- <a class="nav-link" href="Cliente/login/frm_login.php">Iniciar Sesion</a> -->
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="vistas/servicios/servicios.php">Nosotros</a>
-                </li>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                        Ingresar
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                        <a href="Cliente/login/frm_login.php"><button class="dropdown-item" type="button">Iniciar Sesión</button></a>
-                        <a href="Cliente/usuario/form_cliente.php"><button class="dropdown-item" type="button">Registrarse</button></a>
-                    </div>
-                </div>
-            </ul>
-        </div>
-    </nav>
+    
 
     <section class="sect-index">
         <div class="bg-index">

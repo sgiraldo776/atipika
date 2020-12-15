@@ -17,38 +17,40 @@
 
     <link rel="icon" type="image/png" href="">
 
-    <link rel="stylesheet" href="<?php echo $URL ?>css/estilo.css">
+    <link rel="stylesheet" href="<?php echo $URL;?>css/estilo.css">
 </head>
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-nav">
+<nav class="navbar navbar-expand-lg navbar-light bg-nav">
         <div class="col-sm-3 text-center">
-            <a class="navbar-brand" href="<?php echo $URL ?>index.php">
+            <a class="navbar-brand" href="<?php echo $URL ?>">
                 <img src="<?php echo $URL ?>img/logo-02.png" alt="">
             </a>
         </div>
 
-        <button class="navbar-toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler toggler col-sm-3 ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav hola ml-auto">
                 <li class="nav-item ">
-                    <a class="nav-link" href="<?php echo $URL ?>index.php">Inicio</span></a>
+                    <a class="nav-link" href="<?php echo $URL ?>">Inicio</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $URL ?>vistas/estilos/estilos.php">Estilos</a>
+                    <!-- <a class="nav-link" href="Cliente/login/frm_login.php">Iniciar Sesion</a> -->
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $URL ?>vistas/servicios/servicios.php">Nosotros</a>
                 </li>
                 <div class="btn-group">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
-                        Perfil
+                        Ingresar
                     </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
-                        <a href="<?php echo $URL ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
+                        <a href="<?php echo $URL ?>vistas/login/login.php"><button class="dropdown-item" type="button">Iniciar Sesión</button></a>
+                        <a href="<?php echo $URL ?>vistas/registro/form_registrarse.php"><button class="dropdown-item" type="button">Registrarse</button></a>
                     </div>
                 </div>
             </ul>
