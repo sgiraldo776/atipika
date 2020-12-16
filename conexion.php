@@ -2,7 +2,9 @@
 
 //Los otros jaja
 $conn = new mysqli('localhost','root','','atipika');
-$URL = "http://localhost/GIT/atipika/";
+//$URL = "http://localhost/GIT/atipika/";
+
+$URL = "http://localhost/atipika/";
 
 
     //Samir
