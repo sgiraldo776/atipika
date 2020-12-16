@@ -24,7 +24,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Administracion Abejorral</title>
+        <title>Administracion Atipika</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -86,8 +86,25 @@
                         </ul>
                     </div>
                 </nav>
-                Flor
             <!-- /#page-content-wrapper -->
+
+            <div class="container-fluid">
+                    <h1 class="mt-4">Ingresar diseño Flor</h1>
+                    <form action="controlador/ingresar_flor.php" name="add_form" method="POST" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Nombre:</label>
+                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="nombre del diseño" required>
+                        </div>
+                        <div class="form-group">
+                            <label> Imagen</label>
+                                <input type="file" name="img1" required>
+                        </div>
+                        <div class="form-group text-center mb-5">
+                            <button type="submit" class="btn btn-primary">Registrar</button>
+                        </div>
+                    </form>
+            </div>
+
 
         </div>
         <!-- /#wrapper -->

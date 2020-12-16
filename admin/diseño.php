@@ -22,7 +22,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Administracion Abejorral</title>
+        <title>Administracion Atipika</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
@@ -100,24 +100,7 @@
                             <button type="submit" class="btn btn-primary">Registrar</button>
                         </div>
                     </form>
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                </form>
-
-
-        </div>
+            </div>
         <!-- /#wrapper -->
 
         <!-- Bootstrap core JavaScript -->
