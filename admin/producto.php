@@ -1,6 +1,6 @@
 <?php
 
-
+include '../conexion.php';
     /* session_start();
     if (!isset($_SESSION['rol'])){
         echo "<script> location.href='../index.php'; </script>";
@@ -33,7 +33,7 @@
         <!-- Custom styles for this template -->
         <link href="simple-sidebar.css" rel="stylesheet">
 
-        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/estilo.css" rel="stylesheet">
 
         <!-- Sweet alerts -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -90,7 +90,7 @@
 
             <div class="container-fluid">
                     <h1 class="mt-4">Ingresar diseño Hechos</h1>
-                    <form action="controlador/ingresar_disenohecho.php" name="add_form" method="POST" enctype="multipart/form-data">
+                    <form action="controlador/ingresar_producto.php" name="add_form" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Nombre:</label>
                                 <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="nombre del diseño" required>
@@ -100,11 +100,36 @@
                                 <input type="file" name="img1" required>
                         </div>
                         <div class="form-group text-center mb-5">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
+                            <button type="submit" class="btn btn-color">Registrar</button>
                         </div>
                     </form>
             </div>
-
+            <div class="container-fluid">
+                <h1 class="mt-4">Lista de Productos hechos</h1>
+                <div class="mt-4">
+                    <table class="table table-hover">
+                        <thead class="thead">
+                            <th>codigo</th>
+                            <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th></th>
+                        </thead>
+                        <?php 
+                        $sel = $conn ->query("SELECT * FROM tbldiseñohechos");
+                            $cont=0;
+                        while ($fila = $sel -> fetch_assoc()) {
+                            $cont++;
+                        ?>
+                        <tr>
+                            <td><?php echo $fila['cod_diseño'] ?></td>
+                            <td><?php echo $fila['nombre'] ?></td>
+                            <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_diseño']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
         </div>
         <!-- /#wrapper -->
 
@@ -126,8 +151,8 @@
             function preguntar(id){
             Swal
                 .fire({
-                    title: "¿Eliminar el sitio turistico?",
-                    text: "¿Estas seguro de eliminar el sitio?",
+                    title: "¿Eliminar el producto?",
+                    text: "¿Estas seguro de eliminar el producto?",
                     icon: 'error',            
                     showCancelButton: true,
                     confirmButtonText: "Sí, eliminar",
@@ -137,7 +162,7 @@
                     if (resultado.value) {
                         // Hicieron click en "Sí"
                         //console.log("*se elimina la venta*");
-                        window.location.href="controlador/eliminar_sitio.php?Cod_Sitio="+id
+                        window.location.href="controlador/eliminar_producto.php?cod_prod="+id
                     } else {
                         // Dijeron que no
                         console.log("*NO se elimina*");

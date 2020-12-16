@@ -33,6 +33,8 @@ include '../conexion.php';
         <!-- Custom styles for this template -->
         <link href="simple-sidebar.css" rel="stylesheet">
 
+        <link href="../css/estilo.css" rel="stylesheet">
+
 
         <!-- Sweet alerts -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -100,95 +102,38 @@ include '../conexion.php';
                                 <input type="file" name="img1" required>
                         </div>
                         <div class="form-group text-center mb-5">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
+                            <button type="submit" class="btn btn-color">Registrar</button>
                         </div>
                     </form>
             </div>
 
 
             <div class="container-fluid">
-                    <h1 class="mt-4">Lista de fondos</h1>
-                    
-                    <div class="mt-4">
-            <table class="table table-hover">
-                <thead class="thead">
-                    <th>codigo</th>
-                    <th>Nombre</th>
-                    <th>Imagen</th>
-                    <th></th>
-                </thead>
-                <?php 
-                $sel = $conn ->query("SELECT * FROM tblfondo");
-                    $cont=0;
-                while ($fila = $sel -> fetch_assoc()) {
-                    $cont++;
-                ?>
-                <tr>
-                    <td><?php echo $fila['cod_fondo'] ?></td>
-                    <td><?php echo $fila['nombre'] ?></td>
-                    <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
-                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
-
-
-                </tr>
-
-                    <!-- /Modal acutualzar cliente -->
-
-                    <div class="modal" tabindex="-1" role="dialog" id="modal<?php echo $cont; ?>">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title">Editar Usuario</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-
-
-                                            <form action="controlador/actualizar_cliente.php?Id_Cliente=<?php echo $fila['Id_Cliente']?>" method="post">
-                                                <label>Identificación:</label>
-                                                <input type="text" class="form-control" name="id" value="<?php echo $fila['Id_Cliente'] ?>" disabled>
-                                                <label>Nombre cliente:</label>
-                                                <input type="text" class="form-control" name="nombre" value="<?php echo $fila['Nombre'] ?>">
-                                                <label>Apellido cliente:</label>
-                                                <input type="text" class="form-control" name="apellidos" value="<?php echo $fila['Apellidos']?>">
-                                                <label>Fecha de nacimiento:</label>
-                                                <input type="text" class="form-control" name="fecha_naci" value="<?php echo $fila['Fecha_Nacimiento']?>">
-                                                <label>Celular:</label>
-                                                <input type="text" class="form-control" name="celular" value="<?php echo $fila['Cel']?>">
-                                                <label>Municipio:</label>
-                                                <input type="text" class="form-control" name="municipio" value="<?php echo $fila['Municipio']?>">
-                                                <label>Departamento:</label>
-                                                <input type="text" class="form-control" name="departamento" value="<?php echo $fila['Departamento']?>">
-                                                <label>Dirección:</label>
-                                                <input type="text" class="form-control" name="direccion" value="<?php echo $fila['Direccion']?>">
-                                                <label>Correo:</label>
-                                                <input type="text" class="form-control" name="correo" value="<?php echo $fila['Correo']?>">
-                                                
-                                                <div class="modal-footer">
-                                                    <button type="submit" class="btn btn-admin">Guardar</button>
-                                                    <button type="button" class="btn btn-admin" data-dismiss="modal">Cancelar</button>
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-
-
-                <!-- /#Final Modal Actualizar cliente -->
-                    
-                <?php } ?>
-            </table>
-        </div>
-    </div>
-
-
-
-
-
+                <h1 class="mt-4">Lista de fondos</h1>
+                <div class="mt-4">
+                    <table class="table table-hover">
+                        <thead class="thead">
+                            <th>codigo</th>
+                            <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th></th>
+                        </thead>
+                        <?php 
+                        $sel = $conn ->query("SELECT * FROM tblfondo");
+                            $cont=0;
+                        while ($fila = $sel -> fetch_assoc()) {
+                            $cont++;
+                        ?>
+                        <tr>
+                            <td><?php echo $fila['cod_fondo'] ?></td>
+                            <td><?php echo $fila['nombre'] ?></td>
+                            <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
         </div>
         <!-- /#wrapper -->
 

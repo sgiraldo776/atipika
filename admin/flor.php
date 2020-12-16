@@ -1,6 +1,6 @@
 <?php
 
-
+include '../conexion.php';
     /* session_start();
     if (!isset($_SESSION['rol'])){
         echo "<script> location.href='../index.php'; </script>";
@@ -33,7 +33,7 @@
         <!-- Custom styles for this template -->
         <link href="simple-sidebar.css" rel="stylesheet">
 
-        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/estilo.css" rel="stylesheet">
 
         <!-- Sweet alerts -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -100,12 +100,36 @@
                                 <input type="file" name="img1" required>
                         </div>
                         <div class="form-group text-center mb-5">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
+                            <button type="submit" class="btn btn-color">Registrar</button>
                         </div>
                     </form>
             </div>
-
-
+            <div class="container-fluid">
+                <h1 class="mt-4">Lista de Diseños</h1>
+                <div class="mt-4">
+                    <table class="table table-hover">
+                        <thead class="thead">
+                            <th>codigo</th>
+                            <th>Nombre</th>
+                            <th>Imagen</th>
+                            <th></th>
+                        </thead>
+                        <?php 
+                        $sel = $conn ->query("SELECT * FROM tblflor");
+                            $cont=0;
+                        while ($fila = $sel -> fetch_assoc()) {
+                            $cont++;
+                        ?>
+                        <tr>
+                            <td><?php echo $fila['cod_flor'] ?></td>
+                            <td><?php echo $fila['nombre'] ?></td>
+                            <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_flor']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                        </tr>
+                        <?php } ?>
+                    </table>
+                </div>
+            </div>
         </div>
         <!-- /#wrapper -->
 
@@ -127,8 +151,8 @@
             function preguntar(id){
             Swal
                 .fire({
-                    title: "¿Eliminar el sitio turistico?",
-                    text: "¿Estas seguro de eliminar el sitio?",
+                    title: "¿Eliminar la flor?",
+                    text: "¿Estas seguro de eliminar la flor?",
                     icon: 'error',            
                     showCancelButton: true,
                     confirmButtonText: "Sí, eliminar",
@@ -138,7 +162,7 @@
                     if (resultado.value) {
                         // Hicieron click en "Sí"
                         //console.log("*se elimina la venta*");
-                        window.location.href="controlador/eliminar_sitio.php?Cod_Sitio="+id
+                        window.location.href="controlador/eliminar_flor.php?cod_flor="+id
                     } else {
                         // Dijeron que no
                         console.log("*NO se elimina*");
