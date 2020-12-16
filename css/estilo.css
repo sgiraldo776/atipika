@@ -200,3 +200,43 @@
     .copy {
         color: #770ABF;
     }
+    /* Quienes Somos */
+    
+    .quien-somo {
+        overflow: hidden;
+    }
+    
+    .vista-somos {}
+    
+    .card-input-element {
+        display: none;
+    }
+    
+    .card-input {
+        margin: 10px;
+        padding: 00px;
+    }
+    
+    .card-input:hover {
+        cursor: pointer;
+    }
+    
+    .card-input-element:checked+.card-input {
+        box-shadow: 0 0 1px 1px #2ecc71;
+    }
+    
+    .scroll {
+        overflow: scroll;
+        width: 100%;
+        height: auto;
+    }
+    
+    .scroll::-webkit-scrollbar {
+        width: 7px;
+        height: 7px;
+    }
+    
+    .scroll::-webkit-scrollbar-thumb {
+        background-color: #552873;
+        border-radius: 5px;
+    }
