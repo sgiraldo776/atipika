@@ -21,6 +21,4 @@ if ($del==true){
     echo "<script> 	location.href='../clientes.php'; </script>";
 }
 
-
-
 ?>
