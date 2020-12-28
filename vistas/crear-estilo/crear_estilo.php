@@ -72,7 +72,7 @@
 
                     <div class="">
                         <label>
-                            <input type="radio" name="product" class="card-input-element" />
+                            <input type="radio" name="tipo_prenda" class="card-input-element" />
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
@@ -99,7 +99,7 @@
 
                     <div class="">
                         <label>
-                            <input type="radio" name="product" class="card-input-element" />
+                            <input type="radio" name="disenio" class="card-input-element" />
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
@@ -126,7 +126,7 @@
 
                     <div class="">
                         <label>
-                            <input type="radio" name="product" class="card-input-element" />
+                            <input type="radio" name="fondo" class="card-input-element" />
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
@@ -153,7 +153,7 @@
 
                     <div class="">
                         <label>
-                            <input type="radio" name="product" class="card-input-element" />
+                            <input type="radio" name="flor" class="card-input-element" />
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
