@@ -19,7 +19,7 @@
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/estilo.css">
 
 </head>
 
@@ -32,7 +32,7 @@ include '../../conexion.php';
         <nav class="bg-nav">
             <div class=" col-12 text-center">
                 <a class="navbar-brand my-3" href="../../index.php">
-                    <img src="#" style="width: 250px;">
+                    <img src="../../img/logo-02.png" style="width: 250px;">
                 </a>
             </div>
         </nav>

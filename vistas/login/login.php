@@ -33,7 +33,7 @@
                 <form action="ingreso.php" method="post">
                     <div class="logo text-center col-12">
                         <a href="../../index.php">
-                            <img src="../../img/icono.png" alt="">
+                            <img src="../../img/logo-01.png" alt="">
                         </a>
                     </div>
 
