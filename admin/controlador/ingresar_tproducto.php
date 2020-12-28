@@ -18,10 +18,10 @@ $sql="INSERT INTO tblproducto (nombre, imagen) VALUES ('$nombre', '$name')";
 if ($conn->query($sql)){
     
     echo "<script> alert('Correcto');</script>";
-    echo "<script> location.href='../producto.php'; </script>";
+    echo "<script> location.href='../tipo_producto.php'; </script>";
 }else{
     echo "Error: " . $sql . "<br>". $conn->error;
-    echo "<script> location.href='../producto.php'; </script>";
+    echo "<script> location.href='../tipo_producto.php'; </script>";
 }
 
 

@@ -2,24 +2,26 @@
 
 include '../../conexion.php';
 
-$cod_fondo=$_GET['cod_fondo'];
+$cod_diseño=$_GET['cod_diseño'];
 
-$imagen=$conn->query("SELECT tblfondo.imagen FROM tblfondo");
+$imagen=$conn->query("SELECT tbldiseño.imagen FROM tbldiseño");
 
 $fila = $imagen -> fetch_assoc();
     $img=$fila['imagen'];
 
 
 
-$del = $conn -> query(" DELETE FROM tblfondo WHERE cod_fondo='$cod_fondo'");
+$del = $conn -> query(" DELETE FROM tbldiseño WHERE cod_diseño='$cod_diseño'");
 
 if ($del==true){
         unlink("../../images/$img");//acá le damos la direccion exacta del archivo
         echo "<script> alert ('Eliminado correctamente') </script>";
-        echo "<script> 	location.href='../fondo.php'; </script>";
+        echo "<script> 	location.href='../diseño.php'; </script>";
 }else{
     echo "<script> alert ('Error') </script>";
-    echo "<script> 	location.href='../fondo.php'; </script>";
+    echo "<script> 	location.href='../diseño.php'; </script>";
 }
+
+
 
 ?>

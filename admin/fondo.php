@@ -33,6 +33,8 @@ include '../conexion.php';
         <!-- Custom styles for this template -->
         <link href="simple-sidebar.css" rel="stylesheet">
 
+        <link href="../css/estilo.css" rel="stylesheet">
+
 
         <!-- Sweet alerts -->
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -100,7 +102,7 @@ include '../conexion.php';
                                 <input type="file" name="img1" required>
                         </div>
                         <div class="form-group text-center mb-5">
-                            <button type="submit" class="btn btn-primary">Registrar</button>
+                            <button type="submit" class="btn btn-color">Registrar</button>
                         </div>
                     </form>
             </div>
