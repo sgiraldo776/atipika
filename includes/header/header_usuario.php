@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eco Car Wash</title>
+    <title>Atipika</title>
 
     <!--importacion boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -41,7 +41,7 @@
                     <a class="nav-link" href="<?php echo $URL ?>vistas/estilos/estilos.php">Estilos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="<?php echo $URL ?>vistas/servicios/servicios.php">Nosotros</a>
+                    <a class="nav-link" href="<?php echo $URL ?>vistas/quienes_somos/quienes_somos.php">Nosotros</a>
                 </li>
                 <div class="btn-group">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">

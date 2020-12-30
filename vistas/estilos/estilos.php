@@ -1,3 +1,22 @@
+<?php
+    include '../../conexion.php';
+
+    session_start();
+        if(!isset($_SESSION['rol'])){
+            include '../../includes/header/header_inicio.php';
+        }else{
+            if($_SESSION['rol'] !=1 ){
+                if($_SESSION['rol'] =2 ){
+                    include '../../includes/header/header_usuario.php';
+                }else {
+                    include '../../includes/header/header_inicio.php';
+                }
+            }else {
+                include '../../includes/header/header_admin.php';
+            }            
+        }
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
