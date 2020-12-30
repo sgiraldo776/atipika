@@ -71,7 +71,7 @@
                 <div class="col-lg-6 my-3 my-lg-0 text-lg-center text-center">
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-instagram"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://www.instagram.com/atipika_oficial/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-lg-3 text-lg-center text-center contac">
                     <h3 class="contac"><a href="#">Contáctenos</a></h3>

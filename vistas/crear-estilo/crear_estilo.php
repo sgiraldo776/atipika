@@ -15,7 +15,7 @@
                 include '../../includes/header/header_admin.php';
             }            
         }
-
+ 
     $producto=$conn->query("SELECT * FROM tblproducto");
     $diseno=$conn->query("SELECT * FROM tbldiseño");
     $fondo=$conn->query("SELECT * FROM tblfondo");

@@ -40,7 +40,24 @@
 
 <body>
     <section class="quien-somo">
-        <div class="vista-somos">
+        <div class="container">
+            <div class="vista-somos text-center">
+                <h1>QUIENES SOMOS</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-sm-12 text-center">
+                    <h1>MISION</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis eveniet assumenda reiciendis sunt quo ut eum necessitatibus asperiores numquam praesentium dolor iste exercitationem sint totam saepe, doloribus quod maxime magni.</p>
+                </div>
+                <div class="col-lg-4 col-sm-12 text-center">
+                    <h1>VISION</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis eveniet assumenda reiciendis sunt quo ut eum necessitatibus asperiores numquam praesentium dolor iste exercitationem sint totam saepe, doloribus quod maxime magni.</p>
+                </div>
+                <div class="col-lg-4 col-sm-12 text-center">
+                    <h1>OBJETIVOS</h1>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis eveniet assumenda reiciendis sunt quo ut eum necessitatibus asperiores numquam praesentium dolor iste exercitationem sint totam saepe, doloribus quod maxime magni.</p>
+                </div>
+            </div>
         </div>
     </section>
 

@@ -15,6 +15,8 @@
                 include '../../includes/header/header_admin.php';
             }            
         }
+
+    $sel=$conn->query('SELECT * FROM tbldiseñohechos');
 ?>
 
 <!DOCTYPE html>
@@ -41,17 +43,16 @@
 
 <body>
 
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
+            <?php
+                while($fila=$sel->fetch_assoc()){
+            ?>
             <div class="card" style="width: 18rem;">
-                <img src="../../img/bg.jpg" class="card-img-top">
+                <img src="<?php echo $urlimagen.$fila['imagen']; ?>" class="card-img-top">
                 <div class="card-body">
                     <div class="col-12 text-center">
-                        <h5 class="card-title">Card title</h5>
-                    </div>
-
-                    <div class="col-12">
-                        <p class="card-text text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+                        <h5 class="card-title"><?php echo $fila['nombre']; ?></h5>
                     </div>
 
                     <div class="align-items-center text-center mt-2">
@@ -61,9 +62,19 @@
 
                 </div>
             </div>
+            <?php
+                }
+            ?>
         </div>
+        <a href="../crear-estilo/crear_estilo.php">Crea tu propia prenda aquí</a>
     </div>
-
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
 </body>
 
 </html>
