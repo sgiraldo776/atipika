@@ -52,12 +52,13 @@
                 <div>
                     <h2>Tipos de prendas</h2>
                 </div>
-                <?php
-                while ($fila = $producto -> fetch_assoc()) {
-                    ?>
+                
                 <div class="form-group d-flex scroll mb-5">
-
+                    <?php
+                        while ($fila = $producto -> fetch_assoc()) {
+                    ?>
                     <div class="">
+                    
                         <label>
                             <input type="radio" name="tipo_prenda" class="card-input-element" value="<?php echo $fila['cod_producto'] ?>">
                             <div class="panel panel-default card-input">
@@ -74,21 +75,20 @@
                             </div>
                         </label>
                     </div>
-
+                    <?php 
+                    }
+                    ?>         
                 </div>
-                <?php 
-                }
-                ?>
 
                 <div>
                     <h2>Diseños</h2>
                 </div>
-                <?php
-                while ($fila = $diseno -> fetch_assoc()) {
-                    ?>
+                
 
                 <div class="form-group d-flex scroll mb-5">
-
+                    <?php
+                    while ($fila = $diseno -> fetch_assoc()) {
+                    ?>
                     <div class="">
                         <label>
                             <input type="radio" name="disenio" class="card-input-element" value="<?php echo $fila['cod_diseño'] ?>">
@@ -108,20 +108,22 @@
                         </label>
                     </div>
 
+                    <?php 
+                    }
+                    ?>
+
                 </div>
-                <?php 
-                }
-                ?>
+                
 
                 <div>
                     <h2>Fondos</h2>
                 </div>
-                <?php
-                while ($fila = $fondo -> fetch_assoc()) {
-                    ?>
+                
 
                 <div class="form-group d-flex scroll mb-5">
-
+                    <?php
+                    while ($fila = $fondo -> fetch_assoc()) {
+                    ?>
                     <div class="">
                         <label>
                             <input type="radio" name="fondo" class="card-input-element" value="<?php echo $fila['cod_fondo'] ?>">
@@ -140,22 +142,21 @@
                             </div>
                         </label>
                     </div>
+                    <?php 
+                    }
+                    ?>
 
                 </div>
-                <?php 
-                }
-                ?>
+                
 
                 <div>
                     <h2>Flor</h2>
                 </div>
 
-                <?php
-                while ($fila = $flor -> fetch_assoc()) {
-                    ?>
-
                 <div class="form-group d-flex scroll mb-5">
-
+                    <?php
+                    while ($fila = $flor -> fetch_assoc()) {
+                    ?>
                     <div class="">
                         <label>
                             <input type="radio" name="flor" class="card-input-element" value="<?php echo $fila['cod_flor'] ?>">
@@ -174,12 +175,13 @@
                             </div>
                         </label>
                     </div>
+                    <?php 
+                    }
+                    ?>
 
                 </div>
 
-                <?php 
-                }
-                ?>
+                
                 
 
 
