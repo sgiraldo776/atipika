@@ -56,6 +56,7 @@ include '../conexion.php';
                     <a href="diseño.php" class="list-group-item list-group-item-action bg-light">Diseño</a>
                     <a href="flor.php" class="list-group-item list-group-item-action bg-light">Flor</a>
                     <a href="fondo.php" class="list-group-item list-group-item-action bg-light">Fondo</a>
+                    <a href="pedidos.php" class="list-group-item list-group-item-action bg-light">Pedidos</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->

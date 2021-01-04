@@ -92,49 +92,65 @@ include '../conexion.php';
             <!-- /#page-content-wrapper -->
 
             <div class="container-fluid">
-                    <h1 class="mt-4">Ingresar fondo</h1>
-                    <form action="controlador/ingresar_fondo.php" name="add_form" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label>Nombre:</label>
-                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="Nombre del diseño" required>
-                        </div>
-                        <div class="form-group">
-                            
-                            <!-- <input type="file" name="img1" required> -->
-
-                                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                                <input type="file" name ="img1" id="fichero-tarifas" class="input-file" required>
-                                </div>
-                                <br><br>
-                        </div>
-                        <div class="form-group text-center mb-5">
-                            <button type="submit" class="btn btn-color">Registrar</button>
-                        </div>
-                    </form>
-            </div>
-
-
-            <div class="container-fluid">
-                    <h1 class="mt-4">Lista de fondos</h1>
+                    <h1 class="mt-4">Lista de pedidos</h1>
                     
                     <div class="mt-4">
             <table class="table table-hover">
                 <thead class="thead">
                     <th>Código</th>
-                    <th>Nombre</th>
-                    <th>Imagen</th>
+                    <th>ID cliente</th>
+                    <th>Nombre cliente</th>
+                    <th>Prenda</th>
+                    <th>Talla</th>
+                    <th>Fecha</th>
+                    <th>Estado</th>
+                    <th>Diseño</th>
+                    <th>Fondo</th>
+                    <th>Frase</th>
+                    <th>Flor</th>
                     <th></th>
                 </thead>
                 <?php 
-                $sel = $conn ->query("SELECT * FROM tblfondo");
+                $sel = $conn ->query("SELECT
+                `tblpedido`.`cod_pedido`,
+                `tblpedido`.`id`,
+                CONCAT_WS(
+                    ' ',
+                    `tblcliente`.`nombre`,
+                    `tblcliente`.`apellidos`
+                ) AS `Cliente`, `tblproducto`.`imagen` AS `producto`,
+                `tblpedido`.`talla` AS `talla`,
+                `tblpedido`.`fecha` AS `fecha`,
+                `tblestado`.`nombre` AS `estado`,
+                `tbldiseño`.`imagen` AS `diseño`,
+                `tblfondo`.`imagen` AS `fondo`,
+                `tblpedido`.`frase` AS `frase`,
+                `tblflor`.`imagen` AS `flor`
+            FROM
+                `tblpedido`
+            LEFT JOIN `tblproducto` ON `tblpedido`.`cod_producto` = `tblproducto`.`cod_producto`
+            LEFT JOIN `tblestado` ON `tblpedido`.`cod_estado` = `tblestado`.`cod_estado`
+            LEFT JOIN `tbldiseño` ON `tblpedido`.`cod_diseño` = `tbldiseño`.`cod_diseño`
+            LEFT JOIN `tblfondo` ON `tblpedido`.`cod_fondo` = `tblfondo`.`cod_fondo`
+            LEFT JOIN `tblflor` ON `tblpedido`.`cod_flor` = `tblflor`.`cod_flor`
+            LEFT JOIN `tblcliente` ON `tblpedido`.`id` = `tblcliente`.`id`");
                     $cont=0;
                 while ($fila = $sel -> fetch_assoc()) {
                     $cont++;
                 ?>
                 <tr>
-                    <td><?php echo $fila['cod_fondo'] ?></td>
-                    <td><?php echo $fila['nombre'] ?></td>
-                    <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
+                    <td><?php echo $fila['cod_pedido'] ?></td>
+                    <td><?php echo $fila['id'] ?></td>
+                    <td><?php echo $fila['Cliente'] ?></td>
+                    <td><img src="<?php echo $urlimagen.$fila['producto'];?>" style="width:150px; heigth: 150px;"></td>
+                    <td><img src="<?php echo $urlimagen.$fila['diseño'];?>" style="width:150px; heigth: 150px;"></td>
+                    <td><img src="<?php echo $urlimagen.$fila['fondo'];?>" style="width:150px; heigth: 150px;"></td>
+                    <td><img src="<?php echo $urlimagen.$fila['flor'];?>" style="width:150px; heigth: 150px;"></td>
+                    <td><?php echo $fila['frase'] ?></td>
+                    <td><?php echo $fila['talla'] ?></td>
+                    <td><?php echo $fila['fecha'] ?></td>
+                    <td><?php echo $fila['estado'] ?></td>
+                    
                     <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
 
 

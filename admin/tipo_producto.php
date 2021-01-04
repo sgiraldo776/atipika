@@ -56,6 +56,7 @@ include '../conexion.php';
                     <a href="diseño.php" class="list-group-item list-group-item-action bg-light">Diseño</a>
                     <a href="flor.php" class="list-group-item list-group-item-action bg-light">Flor</a>
                     <a href="fondo.php" class="list-group-item list-group-item-action bg-light">Fondo</a>
+                    <a href="pedidos.php" class="list-group-item list-group-item-action bg-light">Pedidos</a>
                 </div>
             </div>
             <!-- /#sidebar-wrapper -->
@@ -90,24 +91,7 @@ include '../conexion.php';
 
 
             <div class="container-fluid">
-                    <h1 class="mt-4">Ingresar Tipo producto</h1>
-                    <form action="controlador/ingresar_tproducto.php" name="add_form" method="POST" enctype="multipart/form-data">
-                        <div class="form-group">
-                            <label>Nombre:</label>
-                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="nombre del diseño" required>
-                        </div>
-                        <div class="form-group">
-                                <!-- <input type="file" name="img1" required>-->
-                                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
-                                <input type="file" name ="img1" id="fichero-tarifas" class="input-file" required>
-                                </div>
-                                <br><br>
-                                
-                        </div>
-                        <div class="form-group text-center mb-5">
-                            <button type="submit" class="btn btn-color">Registrar</button>
-                        </div>
-                    </form>
+                    <h1 class="mt-4">Listas de los prodcutos pedidos</h1>
             </div>
             <div class="container-fluid">
                 <h1 class="mt-4">Lista de Productos hechos</h1>
