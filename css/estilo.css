@@ -225,6 +225,13 @@ nav a:hover {
 
 /* Crear Estilo */
 
+.card-img-top {
+    object-fit: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .card-input-element {
     display: none;
 }

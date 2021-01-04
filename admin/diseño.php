@@ -94,7 +94,7 @@ include '../conexion.php';
                     <form action="controlador/ingresar_diseno.php" name="add_form" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Nombre:</label>
-                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="nombre del diseño" required>
+                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="Nombre del diseño" required>
                         </div>
                         <div class="form-group">
                             
@@ -111,11 +111,11 @@ include '../conexion.php';
             </div>
 
             <div class="container-fluid">
-                <h1 class="mt-4">Lista de Diseños</h1>
+                <h1 class="mt-4">Lista de diseños</h1>
                 <div class="mt-4">
                     <table class="table table-hover">
                         <thead class="thead">
-                            <th>codigo</th>
+                            <th>Código</th>
                             <th>Nombre</th>
                             <th>Imagen</th>
                             <th></th>

@@ -94,11 +94,11 @@ include '../conexion.php';
                     <h1 class="mt-4">Listas de los prodcutos pedidos</h1>
             </div>
             <div class="container-fluid">
-                <h1 class="mt-4">Lista de Productos hechos</h1>
+                <h1 class="mt-4">Lista de tipos de productos</h1>
                 <div class="mt-4">
                     <table class="table table-hover">
                         <thead class="thead">
-                            <th>codigo</th>
+                            <th>Código</th>
                             <th>Nombre</th>
                             <th>Imagen</th>
                             <th></th>

@@ -63,13 +63,13 @@
                             <input type="radio" name="tipo_prenda" class="card-input-element" value="<?php echo $fila['cod_producto'] ?>">
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="card-img-top" alt="..." />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $fila['nombre'] ?></h5>
-                                        <p class="card-text">
+                                        <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
+                                        <!-- <p class="card-text">
                                             This is a longer card with supporting text below as a natural lead-in to
                                             additional content. This content is a little bit longer.
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </div>
@@ -95,13 +95,13 @@
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="card-img-top" alt="..." />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $fila['nombre'] ?></h5>
-                                        <p class="card-text">
+                                        <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
+                                        <!-- <p class="card-text">
                                             This is a longer card with supporting text below as a natural lead-in to
                                             additional content. This content is a little bit longer.
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </div>
@@ -130,13 +130,13 @@
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="card-img-top" alt="..." />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $fila['nombre'] ?></h5>
-                                        <p class="card-text">
+                                        <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
+                                        <!-- <p class="card-text">
                                             This is a longer card with supporting text below as a natural lead-in to
                                             additional content. This content is a little bit longer.
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </div>
@@ -163,13 +163,13 @@
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="card-img-top" alt="..." />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
-                                        <h5 class="card-title"><?php echo $fila['nombre'] ?></h5>
-                                        <p class="card-text">
+                                        <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
+                                        <!-- <p class="card-text">
                                             This is a longer card with supporting text below as a natural lead-in to
                                             additional content. This content is a little bit longer.
-                                        </p>
+                                        </p> -->
                                     </div>
                                 </div>
                             </div>
