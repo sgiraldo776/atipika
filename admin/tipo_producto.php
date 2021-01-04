@@ -97,8 +97,12 @@ include '../conexion.php';
                                 <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="nombre del diseño" required>
                         </div>
                         <div class="form-group">
-                            <label> Imagen</label>
-                                <input type="file" name="img1" required>
+                                <!-- <input type="file" name="img1" required>-->
+                                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
+                                <input type="file" name ="img1" id="fichero-tarifas" class="input-file" required>
+                                </div>
+                                <br><br>
+                                
                         </div>
                         <div class="form-group text-center mb-5">
                             <button type="submit" class="btn btn-color">Registrar</button>
