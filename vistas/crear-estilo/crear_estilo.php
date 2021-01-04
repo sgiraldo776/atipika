@@ -95,7 +95,7 @@
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="card-img-top" alt="..." />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
                                         <h5 class="card-title"><?php echo $fila['nombre'] ?></h5>
                                         <p class="card-text">
