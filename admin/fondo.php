@@ -49,9 +49,9 @@ include '../conexion.php';
 
             <!-- Sidebar -->
             <div class="bg-light border-right" id="sidebar-wrapper">
-                <div class="sidebar-heading">Atipika
-                </div>
                 <div class="list-group list-group-flush">
+                <div class="p-4"><a href="../index.php"><img src="../img/logo-01.png"></a>
+                </div>
                     <a href="producto.php" class="list-group-item list-group-item-action bg-light">Producto</a>
                     <a href="tipo_producto.php" class="list-group-item list-group-item-action bg-light">Tipo producto</a>
                     <a href="diseño.php" class="list-group-item list-group-item-action bg-light">Diseño</a>
