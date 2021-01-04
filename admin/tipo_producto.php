@@ -1,19 +1,19 @@
 <?php
 
 include '../conexion.php';
-    /* session_start();
-    if (!isset($_SESSION['rol'])){
-        echo "<script> location.href='../index.php'; </script>";
+    session_start();
 
+    if(!isset($_SESSION['rol'])){
+        header( 'location:'.$URL.'vistas/login/login.php');
     }else{
-        if($_SESSION['rol']!=1){
-            echo "<script> location.href='../index.php'; </script>";
+        if($_SESSION['rol'] !=1 ){
+            header( 'location:'.$URL.'vistas/login/login.php');
         }
-    } */
+    }
 
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
     <head>
 
@@ -24,7 +24,7 @@ include '../conexion.php';
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <title>Administracion Atipika</title>
+        <title>Administración Atipika</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">

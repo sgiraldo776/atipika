@@ -1,6 +1,14 @@
 <?php
     include '../../conexion.php';
+    session_start();
 
+    if(!isset($_SESSION['rol'])){
+        header( 'location:'.$URL.'vistas/login/login.php');
+    }else{
+        if($_SESSION['rol'] !=2 ){
+            header( 'location:'.$URL.'vistas/login/login.php');
+        }
+    }
 
     $hoy = date("Y-m-d-H-i-s");
 
@@ -11,7 +19,7 @@
     $frase=$_POST['frase'];
     $talla=$_POST['talla'];
 
-    $sql=$conn->query("INSERT INTO tblpedido (id, cod_producto, talla, fecha, cod_estado, cod_diseño, cod_fondo, frase, cod_flor) VALUES (1036424415, '$tipo_prenda', '$talla', '$hoy', 1, '$disenio', '$fondo', '$frase', '$flor'  )");
+    $sql=$conn->query("INSERT INTO tblpedido (id, cod_producto, talla, fecha, cod_estado, cod_diseño, cod_fondo, frase, cod_flor) VALUES ('$_SESSION[id]', '$tipo_prenda', '$talla', '$hoy', 1, '$disenio', '$fondo', '$frase', '$flor'  )");
 
 
     if ($sql==TRUE){
