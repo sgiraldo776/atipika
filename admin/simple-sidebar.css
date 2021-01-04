@@ -1,3 +1,19 @@
+.custom-input-file {
+  background-color: #552873;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+
+  min-height: 15px;
+  float: left;
+  padding: 10px;
+  
+  text-align: center;
+  width: 400px;
+}
+
+
 
 #wrapper {
     overflow-x: hidden;

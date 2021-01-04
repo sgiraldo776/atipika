@@ -89,15 +89,23 @@ include '../conexion.php';
             <!-- /#page-content-wrapper -->
 
             <div class="container-fluid">
-                    <h1 class="mt-4">Ingresar diseño Hechos</h1>
+                    <h1 class="mt-4">Ingresar diseño creados</h1>
                     <form action="controlador/ingresar_producto.php" name="add_form" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
                             <label>Nombre:</label>
-                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="nombre del diseño" required>
+                                <input type="text" name="nombre" class="form-control" placeholder="Nombre del diseño" required>
                         </div>
                         <div class="form-group">
-                            <label> Imagen</label>
-                                <input type="file" name="img1" required>
+                            <label>Imagen:</label>
+                                <br>
+                                <!-- <input type="file" name="img1" class="file" required> -->
+
+
+                                <div class="custom-input-file col-md-6 col-sm-6 col-xs-6">
+                                <input type="file" name ="img1" id="fichero-tarifas" class="input-file" required>
+                                </div>
+                                <br><br>
+
                         </div>
                         <div class="form-group text-center mb-5">
                             <button type="submit" class="btn btn-color">Registrar</button>
@@ -105,11 +113,11 @@ include '../conexion.php';
                     </form>
             </div>
             <div class="container-fluid">
-                <h1 class="mt-4">Lista de Productos hechos</h1>
+                <h1 class="mt-4">Lista de productos creados</h1>
                 <div class="mt-4">
                     <table class="table table-hover">
                         <thead class="thead">
-                            <th>codigo</th>
+                            <th>Código</th>
                             <th>Nombre</th>
                             <th>Imagen</th>
                             <th></th>
@@ -136,6 +144,10 @@ include '../conexion.php';
         <!-- Bootstrap core JavaScript -->
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+
+        <!-- boton del imoput file -->
+        
 
         <!-- Menu Toggle Script -->
     <script>
@@ -171,6 +183,7 @@ include '../conexion.php';
 
             }
         </script>
+
 
     </body>
 
