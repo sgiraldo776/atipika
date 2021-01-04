@@ -82,7 +82,7 @@ include '../../conexion.php';
                 </div>
 
                 <div class="col-12 text-center mb-4">
-                    <a href="">¿Ya tienes cuenta?</a>
+                    <a href="../login/login.php">¿Ya tienes cuenta?</a>
                 </div>
 
             </form>

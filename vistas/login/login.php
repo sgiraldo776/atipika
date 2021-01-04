@@ -1,3 +1,20 @@
+<?php
+    include '../../conexion.php';
+    session_start();
+    if(isset($_SESSION['rol'])){
+    switch($_SESSION['rol']){
+        case 1:
+            echo "<script>     location.href='../../index.php'; </script>";
+        break;
+        case 2:
+            echo "<script>     location.href='../../index.php'; </script>";
+        break;
+
+        default:
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -57,7 +74,7 @@
 
                     <div class="align-items-center text-center">
                         <button type="submit" class="btn btn-color">Ingresar</button>
-                        <button type="submit" class="btn btn-color">Registrarse</button>
+                        <a href="../registro/form_registrarse.php" class="btn btn-color">Registrarse</a>
                     </div>
                 </form>
             </div>
