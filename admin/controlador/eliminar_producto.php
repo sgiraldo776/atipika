@@ -4,12 +4,10 @@ include '../../conexion.php';
 
 $cod_prod=$_GET['cod_prod'];
 
-$imagen=$conn->query("SELECT tbldiseñohechos.imagen FROM tbldiseñohechos");
+$imagen=$conn->query("SELECT tbldiseñohechos.imagen FROM tbldiseñohechos WHERE cod_diseño='$cod_prod'");
 
 $fila = $imagen -> fetch_assoc();
     $img=$fila['imagen'];
-
-
 
 $del = $conn -> query(" DELETE FROM tbldiseñohechos WHERE cod_diseño='$cod_prod'");
 
@@ -21,7 +19,4 @@ if ($del==true){
     echo "<script> alert ('Error') </script>";
     echo "<script> 	location.href='../producto.php'; </script>";
 }
-
-
-
 ?>
