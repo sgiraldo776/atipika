@@ -130,48 +130,46 @@ nav a:hover {
 }
 
 
-/* Destacado*/
+/* MAIN */
 
-.destacado .titulo {
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
     color: #552873;
     font-weight: 700;
 }
 
 .card-img {
-    border-radius: 0;
-    width: 20%;
+    background-image: url(../img/UWU.jpg);
+    padding: 0;
     height: 300px;
     background-position: center;
     background-size: cover;
-    margin-bottom: 20px;
-    color: white;
-    font-weight: 300;
-}
-
-.card-img::after {
-    content: "";
-    display: block;
-    width: 100%;
-    height: 10px;
-    background-color: #552873;
 }
 
 .card-recolor {
     height: 100%;
 }
 
-.personalizar {
-    opacity: 0%;
-}
-
 .card-recolor:hover {
     background-color: rgba(87, 28, 114, 0.541);
 }
 
-.card-recolor:hover .personalizar {
+.card-recolor:hover{
     opacity: 100%;
 }
 
+/* Destacado */
+
+.destacado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Footer */
 

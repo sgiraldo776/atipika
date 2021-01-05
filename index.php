@@ -14,7 +14,8 @@
                 include 'includes/header/header_admin.php';
             }            
         }
-
+    
+        $sel=$conn->query('SELECT * FROM tbldiseñohechos LIMIT 3');
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -38,27 +39,57 @@
 </head>
 
 <body>
-    
-
-    <section class="sect-index">
-        <div class="bg-index">
-            <div class="img-titulo text-center">
-                <img src="img/logo-03.png" style="width: 40%;">
+    <main class="container">
+        <div class="row main">
+            <div class="col-lg-6 col-sm-12 px-5 txt">
+                <h1 class="titulo">HOLA</h1>
+                <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis totam incidunt ex animi aperiam labore dolores tempore consequuntur esse deleniti alias est praesentium tempora magni excepturi possimus ullam quas iure dignissimos a inventore, voluptatem deserunt autem? Odit corporis fugit autem facilis harum ea, aliquam fugiat natus excepturi cum dolores aperiam eveniet et, obcaecati dolor dolore sed nobis alias inventore quibusdam odio, veniam saepe voluptates modi! Magni totam eius facere similique quod molestiae tempore deleniti ullam voluptatem possimus soluta ab delectus expedita placeat iusto sequi ducimus reiciendis, in fugiat cum? Enim sequi rerum natus nobis adipisci ipsam praesentium reprehenderit aperiam commodi.</p>
+            </div>
+            <div class="col-lg-6 col-sm-12 card-img">
+                <a href="vistas/crear-estilo/crear_estilo.php">
+                    <div class="card-recolor"></div>
+                </a>
             </div>
         </div>
-    </section>
+    </main>
 
     <section>
-        <div class="container destacado">
+        <div class="container">
             <div class="text-center titulo">
-                <h1>Destacado</h1>
+                <h1>Top productos</h1>
             </div>
-            <div class="row text-center">
-                <div class="card-img" style="background-image: url(img/UWU.jpg);">
-                    <div class="card-recolor">
-                        <h2>Destacado 1</h2>
-                        <a class="personalizar" href=""><button class="btn btn-primary">Personalizar</button></a>
+            <div class="text-center">
+                <div class="row destacado">
+                    <?php
+                        while($fila=$sel->fetch_assoc()){
+                    ?>
+
+                    <div class="card m-3" style="width: 15rem;">
+                        <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top"
+                            style="height: 15rem;" />
+                        <div class="card-body">
+                            <h5 class="card-title text-center">
+                                <?php echo $fila['nombre'] ?>
+                            </h5>
+                            <!-- <p class="card-text">
+                                                    This is a longer card with supporting text below as a natural lead-in to
+                                                    additional content. This content is a little bit longer.
+                                                </p> -->
+
+                            <div class="align-items-center text-center mt-2">
+                                <button type="submit" class="btn-color">Comprar</button>
+                                <button type="submit" class="btn-color">Agregar a la bolsa</button>
+                            </div>
+                        </div>
                     </div>
+
+
+                    <?php
+                        }
+                    ?>
+                </div>
+                <div class="py-3">
+                    <a href="" class="btn-color">Ver más</a>
                 </div>
             </div>
         </div>
