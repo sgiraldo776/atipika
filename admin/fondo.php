@@ -135,7 +135,8 @@ include '../conexion.php';
                     <td><?php echo $fila['cod_fondo'] ?></td>
                     <td><?php echo $fila['nombre'] ?></td>
                     <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
-                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
+                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                    
 
 
                 </tr>

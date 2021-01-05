@@ -4,7 +4,7 @@ include '../../conexion.php';
 
 $cod_flor=$_GET['cod_flor'];
 
-$imagen=$conn->query("SELECT tblflor.imagen FROM tblflor");
+$imagen=$conn->query("SELECT tblflor.imagen FROM tblflor WHERE cod_flor='$cod_flor'");
 
 $fila = $imagen -> fetch_assoc();
     $img=$fila['imagen'];
