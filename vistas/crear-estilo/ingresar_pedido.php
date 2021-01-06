@@ -23,11 +23,12 @@
 
 
     if ($sql==TRUE){
-        //echo "<script> alert('Correcto');</script>";
-        //echo "<script> location.href='crear_estilo.php'; </script>";
+        echo "<script> alert('Cotizacion enviada satisfactoriamente');</script>";
+        echo "<script> location.href='crear_estilo.php'; </script>";
     }else{
         echo "Error: " . $sql . "<br>". $conn->error;
-        //echo "<script> location.href='crear_estilo.php'; </script>";
+        echo "<script> alert('Error');</script>";
+        echo "<script> location.href='crear_estilo.php'; </script>";
     }
     
 ?>

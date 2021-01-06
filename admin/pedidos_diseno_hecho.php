@@ -99,60 +99,30 @@ include '../conexion.php';
             <table class="table table-hover">
                 <thead class="thead">
                     <th>Código</th>
-                    <th>ID cliente</th>
-                    <th>Nombre cliente</th>
-                    <th>Prenda</th>
-                    <th>Diseño</th>
-                    <th>Fondo</th>
-                    <th>Flor</th>
-                    <th>Frase</th>
-                    <th>Talla</th>
+                    <th>Cliente</th>
+                    <th>Celular</th>
+                    <th>imagen Pedido</th>
                     <th>Fecha</th>
-                    <th>Estado</th>
                     <th></th>
                 </thead>
                 <?php 
-                $sel = $conn ->query("SELECT
-                `tblpedido`.`cod_pedido`,
-                `tblpedido`.`id`,
-                CONCAT_WS(
-                    ' ',
-                    `tblcliente`.`nombre`,
-                    `tblcliente`.`apellidos`
-                ) AS `Cliente`, `tblproducto`.`imagen` AS `producto`,
-                `tblpedido`.`talla` AS `talla`,
-                `tblpedido`.`fecha` AS `fecha`,
-                `tblestado`.`nombre` AS `estado`,
-                `tbldiseño`.`imagen` AS `diseño`,
-                `tblfondo`.`imagen` AS `fondo`,
-                `tblpedido`.`frase` AS `frase`,
-                `tblflor`.`imagen` AS `flor`
-            FROM
-                `tblpedido`
-            LEFT JOIN `tblproducto` ON `tblpedido`.`cod_producto` = `tblproducto`.`cod_producto`
-            LEFT JOIN `tblestado` ON `tblpedido`.`cod_estado` = `tblestado`.`cod_estado`
-            LEFT JOIN `tbldiseño` ON `tblpedido`.`cod_diseño` = `tbldiseño`.`cod_diseño`
-            LEFT JOIN `tblfondo` ON `tblpedido`.`cod_fondo` = `tblfondo`.`cod_fondo`
-            LEFT JOIN `tblflor` ON `tblpedido`.`cod_flor` = `tblflor`.`cod_flor`
-            LEFT JOIN `tblcliente` ON `tblpedido`.`id` = `tblcliente`.`id`");
+                $sel = $conn ->query("SELECT `tblpedido_diseño_hecho`.`id_pedido`, `tblcliente`.`nombre`, `tblcliente`.`celular`, `tbldiseñohechos`.`imagen`, `tblpedido_diseño_hecho`.`fecha`
+                FROM `tblpedido_diseño_hecho` 
+                    LEFT JOIN `tblcliente` ON `tblpedido_diseño_hecho`.`id_cliente` = `tblcliente`.`id` 
+                    LEFT JOIN `tbldiseñohechos` ON `tblpedido_diseño_hecho`.`cod_diseño_hecho` = `tbldiseñohechos`.`cod_diseño_hecho`");
+            
                     $cont=0;
                 while ($fila = $sel -> fetch_assoc()) {
                     $cont++;
                 ?>
                 <tr>
-                    <td><?php echo $fila['cod_pedido'] ?></td>
-                    <td><?php echo $fila['id'] ?></td>
-                    <td><?php echo $fila['Cliente'] ?></td>
-                    <td><img src="<?php echo $urlimagen.$fila['producto'];?>" style="width:150px; heigth: 150px;"></td>
-                    <td><img src="<?php echo $urlimagen.$fila['diseño'];?>" style="width:150px; heigth: 150px;"></td>
-                    <td><img src="<?php echo $urlimagen.$fila['fondo'];?>" style="width:150px; heigth: 150px;"></td>
-                    <td><img src="<?php echo $urlimagen.$fila['flor'];?>" style="width:150px; heigth: 150px;"></td>
-                    <td><?php echo $fila['frase'] ?></td>
-                    <td><?php echo $fila['talla'] ?></td>
+                    <td><?php echo $fila['id_pedido'] ?></td>
+                    <td><?php echo $fila['nombre'] ?></td>
+                    <td><?php echo $fila['celular'] ?></td>
+                    <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" style="width:150px; heigth: 150px;"></td>
                     <td><?php echo $fila['fecha'] ?></td>
-                    <td><?php echo $fila['estado'] ?></td>
                     
-                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_pedido']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                    <td><a href="#" onclick="preguntar(<?php echo $fila['id_pedido']?>)"><button class="btn btn-color">Eliminar</button></a></td>
 
 
                 </tr>
@@ -246,7 +216,7 @@ include '../conexion.php';
                     if (resultado.value) {
                         // Hicieron click en "Sí"
                         //console.log("*se elimina la venta*");
-                        window.location.href="controlador/eliminar_pedido.php?cod_pedido="+id
+                        window.location.href="controlador/eliminar_pedidos_diseno.php?id_pedido="+id
                     } else {
                         // Dijeron que no
                         console.log("*NO se elimina*");
