@@ -63,8 +63,7 @@
                                         </p> -->
 
                     <div class="align-items-center text-center mt-2">
-                        <button type="submit" class="btn-color">Comprar</button>
-                        <button type="submit" class="btn-color">Agregar a la bolsa</button>
+                    <a href="reservar_diseno.php?id=<?php echo $fila['cod_diseño_hecho'] ?>" class="btn btn-color">Reservar</a>
                     </div>
                 </div>
             </div>
