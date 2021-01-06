@@ -132,7 +132,19 @@ include '../conexion.php';
                             <td><?php echo $fila['cod_producto'] ?></td>
                             <td><?php echo $fila['nombre'] ?></td>
                             <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
+                            <?php
+                            if ($fila['cod_producto']==1){
+                                ?>
+                                <td><a href="#" onclick="preguntar(<?php echo $fila['cod_producto']?>)"><button class="btn btn-color" disabled>Eliminar</button></a></td>
+                            <?php
+                            }else{
+                                
+                            
+                            ?>
                             <td><a href="#" onclick="preguntar(<?php echo $fila['cod_producto']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <?php } ?>
                     </table>

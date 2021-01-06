@@ -129,7 +129,19 @@ include '../conexion.php';
                             <td><?php echo $fila['cod_flor'] ?></td>
                             <td><?php echo $fila['nombre'] ?></td>
                             <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
-                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_flor']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                            <?php
+                            if ($fila['cod_flor']==1){
+                                ?>
+                                <td><a href="#" onclick="preguntar(<?php echo $fila['cod_producto']?>)"><button class="btn btn-color" disabled>Eliminar</button></a></td>
+                            <?php
+                            }else{
+                                
+                            
+                            ?>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_producto']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                            <?php
+                            }
+                            ?>
                         </tr>
                         <?php } ?>
                     </table>
