@@ -3,8 +3,8 @@
 //Los otros jaja
 $conn = new mysqli('localhost','root','','atipika');
 
-$URL = "http://localhost/GIT/atipika/";
-$urlimagen="http://localhost/GIT/atipika/images/";
+$URL = "http://localhost/atipika/";
+$urlimagen="http://localhost/atipika/images/";
 
     //Samir
 //$conn = new mysqli('localhost','root','','atipika','33065');
