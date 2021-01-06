@@ -151,7 +151,7 @@ include '../conexion.php';
                     <td><?php echo $fila['fecha'] ?></td>
                     <td><?php echo $fila['estado'] ?></td>
                     
-                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_pedido']?>)"><button class="btn btn-color">Eliminar</button></a></td>
 
 
                 </tr>
@@ -231,11 +231,11 @@ include '../conexion.php';
 
     <!-- pregunta antes de eliminar sweat alert -->
     <script type="text/javascript">
-            function preguntar(id,nombre){
+            function preguntar(id){
             Swal
                 .fire({
-                    title: "¿Eliminar el fondo?",
-                    text: "¿Estas seguro de eliminar el fondo?",
+                    title: "¿Eliminar el pedido?",
+                    text: "¿Estas seguro de eliminar el pedido?",
                     icon: 'error',            
                     showCancelButton: true,
                     confirmButtonText: "Sí, eliminar",
@@ -245,7 +245,7 @@ include '../conexion.php';
                     if (resultado.value) {
                         // Hicieron click en "Sí"
                         //console.log("*se elimina la venta*");
-                        window.location.href="controlador/eliminar_fondo.php?cod_fondo="+id
+                        window.location.href="controlador/eliminar_pedido.php?cod_pedido="+id
                     } else {
                         // Dijeron que no
                         console.log("*NO se elimina*");
