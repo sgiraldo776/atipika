@@ -61,6 +61,10 @@ nav img {
     background-color: #552873;
 }
 
+.bg-nav img {
+    width: 50%;
+}
+
 nav a {
     color: #ffffff !important;
     text-decoration: none;
@@ -132,7 +136,7 @@ nav a:hover {
 
 /* MAIN */
 
-.main{
+.main {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -159,17 +163,19 @@ nav a:hover {
     background-color: rgba(87, 28, 114, 0.541);
 }
 
-.card-recolor:hover{
+.card-recolor:hover {
     opacity: 100%;
 }
 
+
 /* Destacado */
 
-.destacado{
+.destacado {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 /* Footer */
 

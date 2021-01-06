@@ -26,7 +26,8 @@
     <title>Atipika</title>
 
     <!--importacion boostrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -43,7 +44,14 @@
         <div class="row main">
             <div class="col-lg-6 col-sm-12 px-5 txt">
                 <h1 class="titulo">HOLA</h1>
-                <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis totam incidunt ex animi aperiam labore dolores tempore consequuntur esse deleniti alias est praesentium tempora magni excepturi possimus ullam quas iure dignissimos a inventore, voluptatem deserunt autem? Odit corporis fugit autem facilis harum ea, aliquam fugiat natus excepturi cum dolores aperiam eveniet et, obcaecati dolor dolore sed nobis alias inventore quibusdam odio, veniam saepe voluptates modi! Magni totam eius facere similique quod molestiae tempore deleniti ullam voluptatem possimus soluta ab delectus expedita placeat iusto sequi ducimus reiciendis, in fugiat cum? Enim sequi rerum natus nobis adipisci ipsam praesentium reprehenderit aperiam commodi.</p>
+                <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
+                    totam incidunt ex animi aperiam labore dolores tempore consequuntur esse deleniti alias est
+                    praesentium tempora magni excepturi possimus ullam quas iure dignissimos a inventore, voluptatem
+                    deserunt autem? Odit corporis fugit autem facilis harum ea, aliquam fugiat natus excepturi cum
+                    dolores aperiam eveniet et, obcaecati dolor dolore sed nobis alias inventore quibusdam odio, veniam
+                    saepe voluptates modi! Magni totam eius facere similique quod molestiae tempore deleniti ullam
+                    voluptatem possimus soluta ab delectus expedita placeat iusto sequi ducimus reiciendis, in fugiat
+                    cum? Enim sequi rerum natus nobis adipisci ipsam praesentium reprehenderit aperiam commodi.</p>
             </div>
             <div class="col-lg-6 col-sm-12 card-img">
                 <a href="vistas/crear-estilo/crear_estilo.php">
@@ -78,21 +86,21 @@
 
                             <div class="align-items-center text-center mt-2">
                                 <button type="submit" class="btn-color">Comprar</button>
-                                <button type="submit" class="btn-color">Agregar a la bolsa</button>
+                                <button type="submit" class="btn-color">Ver más</button>
                             </div>
                         </div>
                     </div>
-
 
                     <?php
                         }
                     ?>
                 </div>
-                <div class="py-3">
-                    <a href="" class="btn-color">Ver más</a>
-                </div>
+                        
             </div>
+
         </div>
+
+
     </section>
 
     <footer class="footer py-4">
@@ -102,7 +110,8 @@
                 <div class="col-lg-6 my-3 my-lg-0 text-lg-center text-center">
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-twitter"></i></a>
                     <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
-                    <a class="redes btn btn-social mx-3" href="https://www.instagram.com/atipika_oficial/?hl=es-la" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://www.instagram.com/atipika_oficial/?hl=es-la"
+                        target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-lg-3 text-lg-center text-center contac">
                     <h3 class="contac"><a href="#">Contáctenos</a></h3>
@@ -111,11 +120,14 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
 
