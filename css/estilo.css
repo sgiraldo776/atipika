@@ -34,6 +34,13 @@ body {
     color: #ffffff;
 }
 
+.row2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /* Navbar */
 
@@ -122,6 +129,13 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     transition: 0.5s;
+}
+
+.bg-index a{
+    color: #FFF;
+    text-decoration: none;
+    text-shadow: 4px 4px 5px #0c0c0c;
+    font-weight: 700;
 }
 
 @media only screen and (max-width: 992px) {

@@ -43,9 +43,24 @@
 </head>
 
 <body>
+        <section class="mt-5 mb-5">
+            <div class="container text-center">
+                <section class="sect-index">
+                    <div class="bg-index">
+                        <div class="img-titulo text-center">
+                            <a href="../crear-estilo/crear_estilo.php">
+                                <h1>CREA TU PROPIA PRENDA AQUÍ</h1>
+                                <!-- <img src="../../img/logo-03.png" style="width: 40%;"> -->
+                            </a>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
 
     <div class="container text-center">
-        <div class="row">
+        <h1>Nuestras creaciones</h1>
+        <div class="row2 text-center">
             <?php
                 while($fila=$sel->fetch_assoc()){
             ?>
@@ -73,8 +88,24 @@
                 }
             ?>
         </div>
-        <a href="../crear-estilo/crear_estilo.php">Crea tu propia prenda aquí</a>
     </div>
+
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-3 text-lg-left text-center copy">Atipika © 2020</div>
+                <div class="col-lg-6 my-3 my-lg-0 text-lg-center text-center">
+                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://www.instagram.com/atipika_oficial/?hl=es-la"
+                        target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+                <div class="col-lg-3 text-lg-center text-center contac">
+                    <h3 class="contac"><a href="#">Contáctenos</a></h3>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

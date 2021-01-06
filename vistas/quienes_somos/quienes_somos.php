@@ -23,7 +23,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiénes Somos</title>
+    <title>Nosotros</title>
 
     <!--importacion boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -46,14 +46,23 @@
             </div>
             <div class="row">
                 <div class="col-lg-4 col-sm-12 text-center">
-                    <h1>MISION</h1>
+                    <div class="tar-img">
+                        <img src="../../img/disenador-de-moda.svg" alt="">
+                    </div>
+                    <h1>MISIÓN</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis eveniet assumenda reiciendis sunt quo ut eum necessitatibus asperiores numquam praesentium dolor iste exercitationem sint totam saepe, doloribus quod maxime magni.</p>
                 </div>
                 <div class="col-lg-4 col-sm-12 text-center">
-                    <h1>VISION</h1>
+                    <div class="tar-img">
+                        <img src="../../img/buscar.svg" alt="">
+                    </div>
+                    <h1>VISIÓN</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis eveniet assumenda reiciendis sunt quo ut eum necessitatibus asperiores numquam praesentium dolor iste exercitationem sint totam saepe, doloribus quod maxime magni.</p>
                 </div>
                 <div class="col-lg-4 col-sm-12 text-center">
+                    <div class="tar-img">
+                        <img src="../../img/moda.svg" alt="">
+                    </div>
                     <h1>OBJETIVOS</h1>
                     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis eveniet assumenda reiciendis sunt quo ut eum necessitatibus asperiores numquam praesentium dolor iste exercitationem sint totam saepe, doloribus quod maxime magni.</p>
                 </div>
