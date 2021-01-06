@@ -24,6 +24,6 @@
             echo "<script> location.href='../../index.php'; </script>";
         }
     }else{
-        echo "<script> location.href='login.php'; </script>";
+        echo "<script> location.href='login.php?msg=2'; </script>";
     }
 ?>

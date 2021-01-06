@@ -90,6 +90,40 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 
+<?php
+    if(isset($_GET['msg'])){
+        if($_GET['msg']==1){
+    ?>
+
+    <script>
+        Swal.fire('Sesión cerrada correctamente')
+    </script>
+
+    <?php
+        }else{
+            if($_GET['msg']==2){
+    ?>
+
+    <script>
+        Swal.fire('Datos incorrectos')
+    </script>
+    
+    <?php
+        }else{
+            if($_GET['msg']==3){
+    ?>
+
+    <script>
+        Swal.fire('Registro existoso')
+    </script>
+
+    <?php
+            }
+            }
+        }
+    }
+    ?>
+
 </body>
 
 </html>
