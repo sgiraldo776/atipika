@@ -1,5 +1,14 @@
 <?php
     include '../../conexion.php';
+    session_start();
+
+    if(!isset($_SESSION['rol'])){
+        header( 'location:'.$URL.'vistas/login/login.php');
+    }else{
+        if($_SESSION['rol'] !=2 ){
+            header( 'location:'.$URL.'vistas/login/login.php');
+        }
+    }
 
 $cod_diseno=$_GET['id'];
 
@@ -13,6 +22,14 @@ while ($row=$sel->fetch_array()){
     $imagen=$row[2];
 }
 
-$ins=$conn->query("INSERT INTO tblpedido_diseño_hecho (id_cliente, cod_diseño_hecho, fecha) VALUES ( '1036424415', 9, '$hoy')");
+$ins=$conn->query("INSERT INTO tblpedido_diseño_hecho (id_cliente, cod_diseño_hecho, fecha) VALUES ( '$_SESSION[id]', '$cod_diseno', '$hoy')");
+
+if ($ins==TRUE){
+    echo "<script> alert('Correcto');</script>";
+    echo "<script> location.href='estilos.php'; </script>";
+}else{
+    echo "Error: " . $sql . "<br>". $conn->error;
+    //echo "<script> location.href='estilos.php'; </script>";
+}
 
 ?>
