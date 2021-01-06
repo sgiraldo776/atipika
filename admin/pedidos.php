@@ -101,13 +101,13 @@ include '../conexion.php';
                     <th>ID cliente</th>
                     <th>Nombre cliente</th>
                     <th>Prenda</th>
+                    <th>Diseño</th>
+                    <th>Fondo</th>
+                    <th>Flor</th>
+                    <th>Frase</th>
                     <th>Talla</th>
                     <th>Fecha</th>
                     <th>Estado</th>
-                    <th>Diseño</th>
-                    <th>Fondo</th>
-                    <th>Frase</th>
-                    <th>Flor</th>
                     <th></th>
                 </thead>
                 <?php 
@@ -151,7 +151,7 @@ include '../conexion.php';
                     <td><?php echo $fila['fecha'] ?></td>
                     <td><?php echo $fila['estado'] ?></td>
                     
-                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-admin">Eliminar</button></a></td>
+                    <td><a href="#" onclick="preguntar(<?php echo $fila['cod_fondo']?>)"><button class="btn btn-color">Eliminar</button></a></td>
 
 
                 </tr>
