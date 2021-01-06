@@ -42,7 +42,7 @@
 </head>
 
 <body>
-    <main class="container">
+    <main class="container mt-5">
         <div class="row main">
             <div class="col-lg-6 col-sm-12 px-5 txt">
                 <h1 class="titulo">HOLA</h1>
@@ -110,8 +110,8 @@
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-left text-center copy">Atipika © 2020</div>
                 <div class="col-lg-6 my-3 my-lg-0 text-lg-center text-center">
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-twitter"></i></a>
-                    <a class="redes btn btn-social mx-3" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="redes btn btn-social mx-3" href="https://cutt.ly/fjg82Md" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a class="redes btn btn-social mx-3" href="wa.link/vtu4ai" target="_blank"><i class="fab fa-facebook-f"></i></a>
                     <a class="redes btn btn-social mx-3" href="https://www.instagram.com/atipika_oficial/?hl=es-la"
                         target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
