@@ -23,8 +23,8 @@
 
 
     if ($sql==TRUE){
-        echo "<script> alert('Cotizacion enviada satisfactoriamente');</script>";
-        echo "<script> location.href='crear_estilo.php'; </script>";
+        //echo "<script> alert('Cotizacion enviada satisfactoriamente');</script>";
+        echo "<script> location.href='crear_estilo.php?msg=1'; </script>";
     }else{
         echo "Error: " . $sql . "<br>". $conn->error;
         echo "<script> alert('Error');</script>";

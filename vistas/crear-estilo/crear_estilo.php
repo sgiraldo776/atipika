@@ -41,6 +41,9 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
     <link rel="stylesheet" href="../../css/estilo.css">
 </head>
 
@@ -55,26 +58,6 @@
                 </div>
 
                 <div class="form-group d-flex scroll mb-5">
-                    <div class="">
-
-                        <label>
-                            <input type="radio" name="tipo_prenda" class="card-input-element"
-                                value="ninguno">
-                            <div class="panel panel-default card-input">
-                                <div class="card" style="width: 15rem;">
-                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
-                                        class="imagen-portada card-img-top" style="height: 15rem;" />
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Ninguno</h5>
-                                        <!-- <p class="card-text">
-                                            This is a longer card with supporting text below as a natural lead-in to
-                                            additional content. This content is a little bit longer.
-                                        </p> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
                     <?php
                         while ($fila = $producto -> fetch_assoc()) {
                     ?>
@@ -109,26 +92,6 @@
 
 
                 <div class="form-group d-flex scroll mb-5">
-                    <div class="">
-
-                        <label>
-                            <input type="radio" name="tipo_prenda" class="card-input-element"
-                                value="ninguno">
-                            <div class="panel panel-default card-input">
-                                <div class="card" style="width: 15rem;">
-                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
-                                        class="imagen-portada card-img-top" style="height: 15rem;" />
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Ninguno</h5>
-                                        <!-- <p class="card-text">
-                    This is a longer card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                </p> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
                     <?php
                     while ($fila = $diseno -> fetch_assoc()) {
                     ?>
@@ -166,26 +129,6 @@
 
 
                 <div class="form-group d-flex scroll mb-5">
-                    <div class="">
-
-                        <label>
-                            <input type="radio" name="tipo_prenda" class="card-input-element"
-                                value="ninguno">
-                            <div class="panel panel-default card-input">
-                                <div class="card" style="width: 15rem;">
-                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
-                                        class="imagen-portada card-img-top" style="height: 15rem;" />
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Ninguno</h5>
-                                        <!-- <p class="card-text">
-                    This is a longer card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                </p> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
                     <?php
                     while ($fila = $fondo -> fetch_assoc()) {
                     ?>
@@ -221,26 +164,6 @@
                 </div>
 
                 <div class="form-group d-flex scroll mb-5">
-                    <div class="">
-
-                        <label>
-                            <input type="radio" name="tipo_prenda" class="card-input-element"
-                                value="ninguno">
-                            <div class="panel panel-default card-input">
-                                <div class="card" style="width: 15rem;">
-                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
-                                        class="imagen-portada card-img-top" style="height: 15rem;" />
-                                    <div class="card-body">
-                                        <h5 class="card-title text-center">Ninguno</h5>
-                                        <!-- <p class="card-text">
-                    This is a longer card with supporting text below as a natural lead-in to
-                    additional content. This content is a little bit longer.
-                </p> -->
-                                    </div>
-                                </div>
-                            </div>
-                        </label>
-                    </div>
                     <?php
                     while ($fila = $flor -> fetch_assoc()) {
                     ?>
@@ -339,6 +262,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+<?php
+    if(isset($_GET['msg'])){
+        if($_GET['msg']==1){
+    ?>
+
+    <script>
+        Swal.fire('Tu Prenda se ha enviado correctamente, espera que te cotacte uno de nuestros asesores.')
+    </script>
+    
+    <?php
+
+    }
+    }
+    ?>
+
 </body>
 
 </html>
