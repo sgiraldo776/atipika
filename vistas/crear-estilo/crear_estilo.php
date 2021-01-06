@@ -65,7 +65,7 @@
 
                         <label>
                             <input type="radio" name="tipo_prenda" class="card-input-element"
-                                value="<?php echo $fila['cod_producto'] ?>">
+                                value="<?php echo $fila['cod_producto'] ?>" required>
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
                                     <img src="<?php echo $urlimagen.$fila['imagen'] ?>"
