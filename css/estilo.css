@@ -9,6 +9,12 @@ body {
     font-family: 'Raleway', sans-serif;
 }
 
+h1,
+h2,
+h3 {
+    font-weight: 700;
+}
+
 
 /*Utiilidades*/
 
@@ -34,7 +40,7 @@ body {
     color: #ffffff;
 }
 
-.row2{
+.row2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -131,7 +137,7 @@ nav a:hover {
     transition: 0.5s;
 }
 
-.bg-index a{
+.bg-index a {
     color: #FFF;
     text-decoration: none;
     text-shadow: 4px 4px 5px #0c0c0c;
