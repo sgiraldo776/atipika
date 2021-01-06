@@ -1,3 +1,8 @@
+<?php
+include '../../conexion.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 
@@ -5,6 +10,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registrar Cliente</title>
+
+    <link rel="icon" type="image/png" href="../../img/atipika-icon.png">
+
     <!--importacion boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
@@ -14,7 +22,6 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="../../img/icono-pag.png">
 
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
@@ -25,10 +32,6 @@
 
 <body>
 
-    <?php
-include '../../conexion.php';
-
-?>
         <nav class="bg-nav">
             <div class=" col-12 text-center">
                 <a class="navbar-brand my-3" href="../../index.php">
