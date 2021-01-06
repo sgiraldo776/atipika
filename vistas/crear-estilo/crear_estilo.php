@@ -31,7 +31,8 @@
     <title>Atipika</title>
 
     <!--importacion boostrap-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -52,18 +53,40 @@
                 <div>
                     <h2>Tipos de prendas</h2>
                 </div>
-                
+
                 <div class="form-group d-flex scroll mb-5">
+                    <div class="">
+
+                        <label>
+                            <input type="radio" name="tipo_prenda" class="card-input-element"
+                                value="ninguno">
+                            <div class="panel panel-default card-input">
+                                <div class="card" style="width: 15rem;">
+                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">Ninguno</h5>
+                                        <!-- <p class="card-text">
+                                            This is a longer card with supporting text below as a natural lead-in to
+                                            additional content. This content is a little bit longer.
+                                        </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
                     <?php
                         while ($fila = $producto -> fetch_assoc()) {
                     ?>
                     <div class="">
-                    
+
                         <label>
-                            <input type="radio" name="tipo_prenda" class="card-input-element" value="<?php echo $fila['cod_producto'] ?>">
+                            <input type="radio" name="tipo_prenda" class="card-input-element"
+                                value="<?php echo $fila['cod_producto'] ?>">
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
                                         <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
                                         <!-- <p class="card-text">
@@ -77,25 +100,47 @@
                     </div>
                     <?php 
                     }
-                    ?>         
+                    ?>
                 </div>
 
                 <div>
                     <h2>Diseños</h2>
                 </div>
-                
+
 
                 <div class="form-group d-flex scroll mb-5">
+                    <div class="">
+
+                        <label>
+                            <input type="radio" name="tipo_prenda" class="card-input-element"
+                                value="ninguno">
+                            <div class="panel panel-default card-input">
+                                <div class="card" style="width: 15rem;">
+                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">Ninguno</h5>
+                                        <!-- <p class="card-text">
+                    This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
                     <?php
                     while ($fila = $diseno -> fetch_assoc()) {
                     ?>
                     <div class="">
                         <label>
-                            <input type="radio" name="disenio" class="card-input-element" value="<?php echo $fila['cod_diseño'] ?>">
+                            <input type="radio" name="disenio" class="card-input-element"
+                                value="<?php echo $fila['cod_diseño'] ?>">
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
                                         <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
                                         <!-- <p class="card-text">
@@ -113,24 +158,46 @@
                     ?>
 
                 </div>
-                
+
 
                 <div>
                     <h2>Fondos</h2>
                 </div>
-                
+
 
                 <div class="form-group d-flex scroll mb-5">
+                    <div class="">
+
+                        <label>
+                            <input type="radio" name="tipo_prenda" class="card-input-element"
+                                value="ninguno">
+                            <div class="panel panel-default card-input">
+                                <div class="card" style="width: 15rem;">
+                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">Ninguno</h5>
+                                        <!-- <p class="card-text">
+                    This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
                     <?php
                     while ($fila = $fondo -> fetch_assoc()) {
                     ?>
                     <div class="">
                         <label>
-                            <input type="radio" name="fondo" class="card-input-element" value="<?php echo $fila['cod_fondo'] ?>">
+                            <input type="radio" name="fondo" class="card-input-element"
+                                value="<?php echo $fila['cod_fondo'] ?>">
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
                                         <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
                                         <!-- <p class="card-text">
@@ -147,23 +214,45 @@
                     ?>
 
                 </div>
-                
+
 
                 <div>
                     <h2>Flor</h2>
                 </div>
 
                 <div class="form-group d-flex scroll mb-5">
+                    <div class="">
+
+                        <label>
+                            <input type="radio" name="tipo_prenda" class="card-input-element"
+                                value="ninguno">
+                            <div class="panel panel-default card-input">
+                                <div class="card" style="width: 15rem;">
+                                    <img src="https://i1.wp.com/www.paginadelespanol.com/wp-content/uploads/2019/06/Alguien-nadie-algo-nada-todo.png?resize=570%2C381"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <div class="card-body">
+                                        <h5 class="card-title text-center">Ninguno</h5>
+                                        <!-- <p class="card-text">
+                    This is a longer card with supporting text below as a natural lead-in to
+                    additional content. This content is a little bit longer.
+                </p> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+                    </div>
                     <?php
                     while ($fila = $flor -> fetch_assoc()) {
                     ?>
                     <div class="">
                         <label>
-                            <input type="radio" name="flor" class="card-input-element" value="<?php echo $fila['cod_flor'] ?>">
+                            <input type="radio" name="flor" class="card-input-element"
+                                value="<?php echo $fila['cod_flor'] ?>">
 
                             <div class="panel panel-default card-input">
                                 <div class="card" style="width: 15rem;">
-                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>" class="imagen-portada card-img-top" style="height: 15rem;" />
+                                    <img src="<?php echo $urlimagen.$fila['imagen'] ?>"
+                                        class="imagen-portada card-img-top" style="height: 15rem;" />
                                     <div class="card-body">
                                         <h5 class="card-title text-center"><?php echo $fila['nombre'] ?></h5>
                                         <!-- <p class="card-text">
@@ -181,8 +270,8 @@
 
                 </div>
 
-                
-                
+
+
 
 
                 <div class="form-group mb-5">
@@ -241,11 +330,14 @@
         </div>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
     </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
 </body>
 
