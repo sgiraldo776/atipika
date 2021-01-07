@@ -4,12 +4,12 @@ include '../../conexion.php';
 
 $cod_prod=$_GET['cod_prod'];
 
-$imagen=$conn->query("SELECT tbldiseñohechos.imagen FROM tbldiseñohechos WHERE cod_diseño='$cod_prod'");
+$imagen=$conn->query("SELECT tbldiseñohechos.imagen FROM tbldiseñohechos WHERE cod_diseño_hecho='$cod_prod'");
 
 $fila = $imagen -> fetch_assoc();
     $img=$fila['imagen'];
 
-$del = $conn -> query(" DELETE FROM tbldiseñohechos WHERE cod_diseño='$cod_prod'");
+$del = $conn -> query(" DELETE FROM tbldiseñohechos WHERE cod_diseño_hecho='$cod_prod'");
 
 if ($del==true){
         unlink("../../images/$img");//acá le damos la direccion exacta del archivo

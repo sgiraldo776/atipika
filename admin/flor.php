@@ -134,13 +134,13 @@ include '../conexion.php';
                             <?php
                             if ($fila['cod_flor']==1){
                                 ?>
-                                <td><a href="#" onclick="preguntar(<?php echo $fila['cod_producto']?>)"><button class="btn btn-color" disabled>Eliminar</button></a></td>
+                                <td><a href="#" onclick="preguntar(<?php echo $fila['cod_flor']?>)"><button class="btn btn-color" disabled>Eliminar</button></a></td>
                             <?php
                             }else{
                                 
                             
                             ?>
-                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_producto']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_flor']?>)"><button class="btn btn-color">Eliminar</button></a></td>
                             <?php
                             }
                             ?>

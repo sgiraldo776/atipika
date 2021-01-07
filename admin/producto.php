@@ -132,7 +132,7 @@ include '../conexion.php';
                             <td><?php echo $fila['cod_diseño_hecho'] ?></td>
                             <td><?php echo $fila['nombre'] ?></td>
                             <td><img src="<?php echo $urlimagen.$fila['imagen'];?>" width="150px"></td>
-                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_diseño']?>)"><button class="btn btn-color">Eliminar</button></a></td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_diseño_hecho']?>)"><button class="btn btn-color">Eliminar</button></a></td>
                         </tr>
                         <?php } ?>
                     </table>
