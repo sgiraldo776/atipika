@@ -14,7 +14,7 @@
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
 
-    <link rel="icon" type="image/png" href="">
+    <link rel="icon" type="image/png" href="<?php echo $URL;?>img/atipika-icon.png">
 
     <link rel="stylesheet" href="<?php echo $URL;?>css/estilo.css">
 </head>
