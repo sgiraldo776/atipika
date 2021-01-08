@@ -256,7 +256,7 @@
     ?>
 
     <script>
-        Swal.fire('Tu Prenda se ha enviado correctamente, espera que te cotacte uno de nuestros asesores.')
+        Swal.fire('Tu diseño personalizado se ha enviado correctamente. Uno de nuestros asesores se comunicará contigo')
     </script>
     
     <?php

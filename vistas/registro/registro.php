@@ -15,7 +15,7 @@
 
     $sql=$conn->query("INSERT INTO tblCliente (id, nombre, apellidos, celular, correo, contrasena, rol) VALUES ('$id', '$nombres', '$apellidos', '$celular', '$correo', '$contrasena', 2)");
         if ($sql==true){
-            echo "<script> 	location.href='../login/login.php'; </script>";
+            echo "<script> 	location.href='../login/login.php?msg=3'; </script>";
         }else{
             //echo "<script> 	location.href=''; </script>";
             echo "<script> 	alert('ERROR'); </script>";

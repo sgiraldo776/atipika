@@ -116,7 +116,7 @@
     ?>
 
     <script>
-        Swal.fire('Registro existoso')
+        Swal.fire('Registro exitoso')
     </script>
 
     <?php

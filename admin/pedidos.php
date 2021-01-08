@@ -103,6 +103,7 @@ include '../conexion.php';
                     <th>Código</th>
                     <th>ID cliente</th>
                     <th>Nombre cliente</th>
+                    <th>Celular</th>
                     <th>Prenda</th>
                     <th>Diseño</th>
                     <th>Fondo</th>
@@ -121,7 +122,7 @@ include '../conexion.php';
                     ' ',
                     `tblcliente`.`nombre`,
                     `tblcliente`.`apellidos`
-                ) AS `Cliente`, `tblproducto`.`imagen` AS `producto`,
+                ) AS `Cliente`, `tblcliente`.`celular` as `celular`, `tblproducto`.`imagen` AS `producto`,
                 `tblpedido`.`talla` AS `talla`,
                 `tblpedido`.`fecha` AS `fecha`,
                 `tblestado`.`nombre` AS `estado`,
@@ -145,6 +146,7 @@ include '../conexion.php';
                     <td><?php echo $fila['cod_pedido'] ?></td>
                     <td><?php echo $fila['id'] ?></td>
                     <td><?php echo $fila['Cliente'] ?></td>
+                    <td><?php echo $fila['celular'] ?></td>
                     <td><img src="<?php echo $urlimagen.$fila['producto'];?>" style="width:150px; heigth: 150px;"></td>
                     <td><img src="<?php echo $urlimagen.$fila['diseño'];?>" style="width:150px; heigth: 150px;"></td>
                     <td><img src="<?php echo $urlimagen.$fila['fondo'];?>" style="width:150px; heigth: 150px;"></td>
