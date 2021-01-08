@@ -9,7 +9,7 @@
                         target="_blank"><i class="fab fa-instagram"></i></a>
                 </div>
                 <div class="col-lg-3 text-lg-center text-center contac">
-                    <h3 class="contac"><a href="https://cutt.ly/gjg4kjS" target="_blank">Contáctenos</a></h3>
+                    <h3 class="contac"><a href="<?php echo $URL ?>vistas/contactenos/contacto.php" >Contáctenos</a></h3>
                 </div>
             </div>
         </div>
