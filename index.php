@@ -87,7 +87,7 @@
                                                 </p> -->
 
                             <div class="align-items-center text-center mt-2">
-                                <a href="vistas/estilos/reservar_diseno.php?id=<?php echo $fila['cod_diseño_hecho'] ?>"><button class="btn-color">Comprar</button></a>
+                                <a href="carrito/agregar.php?id=<?php echo $fila['cod_diseño_hecho'] ?>"><button class="btn-color">añadir carrito</button></a>
                                 <a href="vistas/estilos/estilos.php"><button class="btn-color">Ver más</button></a>
                             </div>
                         </div>
@@ -135,6 +135,31 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+
+<?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire('agregado al carrito')
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se pudo agregar al carrito')
+        </script>
+
+        <?php
+                }
+            }
+        }
+        ?>
 </body>
 
 </html>

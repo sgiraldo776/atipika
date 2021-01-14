@@ -16,6 +16,7 @@
             }            
         }
 
+
     $sel=$conn->query('SELECT * FROM tbldiseñohechos');
 ?>
 
@@ -80,6 +81,7 @@
                                         </p> -->
 
                     <div class="align-items-center text-center mt-2">
+                    <a href="../../carrito/agregar.php?id=<?php echo $fila['cod_diseño_hecho'] ?>"><button class="btn-color">añadir carrito</button></a>
                     <a href="reservar_diseno.php?id=<?php echo $fila['cod_diseño_hecho'] ?>" class="btn btn-color">Reservar</a>
                     </div>
                 </div>
