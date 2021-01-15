@@ -64,7 +64,12 @@
                             <th>Valor</th>
                         </thead>
                         <?php 
+
+                        $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
+                            $productos[$cont]['prenda']=$fila['productos'];
+                            $productos[$cont]['cantidad']=$fila['cantidad'];
+                            $productos[$cont]['valor']=$fila['Valor'];
                         ?>
                         <tr>
                             <td><?php echo $fila['id_carrito'] ?></td>
@@ -73,9 +78,13 @@
                             <td><?php echo $fila['Valor'] ?></td>
                             <td><a href="#" onclick="preguntar(<?php echo $fila['id_carrito']?>)"><button class="btn btn-color">Quitar</button></a></td>
                         </tr>
-                        <?php } ?>
+                        <?php
+                            $cont++;
+                        }
+                        $_SESSION['productos']=$productos;
+                        ?>
                     </table>
-                    <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
+                    <!-- <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
                       <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
                       <input name="buttonId" type="hidden" value="affFD8p0FpSuX8vKp0YtD466VeK5l2asFLU8jiUWhY7VhFt6iSD4cg=="/>
                       <input name="merchantId" type="hidden" value="688863"/>
@@ -91,8 +100,8 @@
                       <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
                       <input name="buttonType" value="SIMPLE" type="hidden"/>
                       <input name="signature" value="b64684f563f87ac51e9cea0ec249c5886ffd00a0e8da893ca940a0e5fe23acdb" type="hidden"/>
-                    </form>
-                    <input type="button" class="btn btn-success form-control" style="width: 40%;" value="Reservar">
+                    </form> -->
+                    <a class="btn btn-color" href="enviar_pedido.php">Confirmar pedido</a>
                 </div>
             </div>
         </div>
