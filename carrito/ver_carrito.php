@@ -58,7 +58,6 @@
                 <div class="mt-4">
                     <table class="table table-hover">
                         <thead class="thead">
-                            <th>Carrito</th>
                             <th>Productos</th>
                             <th>Cantidad</th>
                             <th>Valor</th>
@@ -72,7 +71,6 @@
                             $productos[$cont]['valor']=$fila['Valor'];
                         ?>
                         <tr>
-                            <td><?php echo $fila['id_carrito'] ?></td>
                             <td><?php echo $fila['productos'] ?></td>
                             <td><?php echo $fila['cantidad'] ?></td>
                             <td><?php echo $fila['Valor'] ?></td>
@@ -81,7 +79,9 @@
                         <?php
                             $cont++;
                         }
-                        $_SESSION['productos']=$productos;
+                        if (isset($productos)){
+                            $_SESSION['productos']=$productos;
+                        }
                         ?>
                     </table>
                     <!-- <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">

@@ -69,6 +69,7 @@ try {
     $mail->charset = 'UTF-8';
     
     $mail->send();
+    $del = $conn -> query(" DELETE FROM cart_item WHERE id='$_SESSION[id]'");
     echo "<script>alert('Pedido enviado exitosamente')</script>";
     echo "<script> setTimeout(\"location.href='ver_carrito.php'\",1000)</script>";
 } catch (Exception $e) {
