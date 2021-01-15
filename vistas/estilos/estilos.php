@@ -75,6 +75,9 @@
                     <h5 class="card-title text-center">
                         <?php echo $fila['nombre'] ?>
                     </h5>
+                    <h5 class="card-title text-center">
+                        COP$<?php echo $fila['valor'] ?>
+                    </h5>
                     <!-- <p class="card-text">
                                             This is a longer card with supporting text below as a natural lead-in to
                                             additional content. This content is a little bit longer.
@@ -97,6 +100,35 @@
     <?php
         include ('../../includes/footer/footer.php');
     ?>
+
+<?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Excelente...',
+                text: 'Producto agregado al carrito',
+            
+            })
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se pudo agregar al carrito')
+        </script>
+
+        <?php
+                }
+            }
+        }
+        ?>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

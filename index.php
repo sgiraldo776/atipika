@@ -84,6 +84,9 @@
                             <h5 class="card-title text-center">
                                 <?php echo $fila['nombre'] ?>
                             </h5>
+                            <h5 class="card-title text-center">
+                                COP$<?php echo $fila['valor'] ?>
+                            </h5>
                             <!-- <p class="card-text">
                                                     This is a longer card with supporting text below as a natural lead-in to
                                                     additional content. This content is a little bit longer.
