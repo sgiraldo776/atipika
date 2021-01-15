@@ -2,7 +2,6 @@
     include '../conexion.php';
 
     session_start();
-    $id=$_SESSION['id'];
         if(!isset($_SESSION['rol'])){
             include '../../includes/header/header_inicio.php';
         }else{
@@ -21,8 +20,6 @@
         FROM `cart_item` 
             LEFT JOIN `tbldiseñohechos` ON `cart_item`.`cod_diseño_hecho` = `tbldiseñohechos`.`cod_diseño_hecho` 
             LEFT JOIN `tblcliente` ON `cart_item`.`id` = `tblcliente`.`id` WHERE `cart_item`.`id` = $_SESSION[id]");
-
-    
 ?>
 
 <!DOCTYPE html>
@@ -42,6 +39,9 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!-- Font Awesome -->
     <script src="https://kit.fontawesome.com/f599362e7b.js" crossorigin="anonymous"></script>
@@ -71,11 +71,28 @@
                             <td><?php echo $fila['productos'] ?></td>
                             <td><?php echo $fila['cantidad'] ?></td>
                             <td><?php echo $fila['Valor'] ?></td>
-                            <td><a href="#" onclick="preguntar(<?php echo $fila['cod_diseño']?>)"><button class="btn btn-color">Quitar</button></a></td>
+                            <td><a href="#" onclick="preguntar(<?php echo $fila['id_carrito']?>)"><button class="btn btn-color">Quitar</button></a></td>
                         </tr>
                         <?php } ?>
                     </table>
-                    <button class="btn btn-color">Reservar</button>
+                    <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
+                      <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
+                      <input name="buttonId" type="hidden" value="affFD8p0FpSuX8vKp0YtD466VeK5l2asFLU8jiUWhY7VhFt6iSD4cg=="/>
+                      <input name="merchantId" type="hidden" value="688863"/>
+                      <input name="accountId" type="hidden" value="691748"/>
+                      <input name="description" type="hidden" value="predas"/>
+                      <input name="referenceCode" type="hidden" value="0123"/>
+                      <input name="amount" type="hidden" value="26000.00"/>
+                      <input name="tax" type="hidden" value="0.00"/>
+                      <input name="taxReturnBase" type="hidden" value="0.00"/>
+                      <input name="shipmentValue" value="16000.00" type="hidden"/>
+                      <input name="currency" type="hidden" value="COP"/>
+                      <input name="lng" type="hidden" value="es"/>
+                      <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
+                      <input name="buttonType" value="SIMPLE" type="hidden"/>
+                      <input name="signature" value="b64684f563f87ac51e9cea0ec249c5886ffd00a0e8da893ca940a0e5fe23acdb" type="hidden"/>
+                    </form>
+                    <input type="button" class="btn btn-success form-control" style="width: 40%;" value="Reservar">
                 </div>
             </div>
         </div>
@@ -89,6 +106,35 @@
     <?php
         include ('../includes/footer/footer.php');
     ?>
+
+    <!-- pregunta antes de eliminar sweat alert -->
+    <script type="text/javascript">
+            function preguntar(id){
+            Swal
+                .fire({
+                    title: "¿Eliminar el diseño?",
+                    text: "¿Estas seguro de eliminar el item del carrito?",
+                    icon: 'error',            
+                    showCancelButton: true,
+                    confirmButtonText: "Sí, eliminar",
+                    cancelButtonText: "Cancelar",
+                })
+                .then(resultado => {
+                    if (resultado.value) {
+                        // Hicieron click en "Sí"
+                        //console.log("*se elimina la venta*");
+                        window.location.href="eliminar_item.php?id_carrito="+id
+                    } else {
+                        // Dijeron que no
+                        console.log("*NO se elimina*");
+                    }
+                });
+
+            }
+        </script>
+
+
+    
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">

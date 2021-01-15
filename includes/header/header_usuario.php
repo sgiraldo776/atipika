@@ -42,6 +42,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $URL ?>vistas/quienes_somos/quienes_somos.php">Nosotros</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<?php echo $URL ?>carrito/ver_carrito.php">Nosotros</a>
+                </li>
                 <div class="btn-group">
                     <button type="button" class="btn btn-invi dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
                         Perfil

@@ -42,6 +42,7 @@
                         </button>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                         <a href="<?php echo $URL ?>admin/producto.php"><button class="dropdown-item" type="button">Panel admin</button></a>
+                        <a href="<?php echo $URL ?>carrito/ver_carrito.php"><button class="dropdown-item" type="button">Carrito</button></a>
                         <a href="<?php echo $URL ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                     </div>
                 </div>
