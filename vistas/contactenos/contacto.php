@@ -49,17 +49,17 @@
                             </div>
                             <form action="enviar_contacto.php" name="add_form" method="post" enctype="multipart/form-data">
                                     <label class="mt-3">Nombres: </label>
-                                    <input class="form-control" type="text" name="nombres" placeholder="Ingrese su nombre"> 
+                                    <input class="form-control" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre"> 
                                     <label class="mt-3">Correo: </label>
-                                    <input class="form-control" type="email" name="correo" placeholder="Ingrese su correo"> 
+                                    <input class="form-control" type="email" name="correo" id="correo" placeholder="Ingrese su correo"> 
                                     <label class="mt-3">Celular: </label>
-                                    <input class="form-control" type="tel" name="celular" placeholder="Ingrese su número de celular">
+                                    <input class="form-control" type="tel" name="celular" id="celular" placeholder="Ingrese su número de celular">
                                     <label class="mt-3">Asunto: </label>
-                                    <input class="form-control" type="text" name="asunto" placeholder="Ingrese el Asunto"> 
+                                    <input class="form-control" type="text" name="asunto" id="asunto" placeholder="Ingrese el Asunto"> 
                                     <label class="mt-3">Comentario:</label>
-                                    <textarea class="form-control" name="comentario" rows="10" placeholder="Ingrese un comentario"></textarea>
+                                    <textarea class="form-control" name="comentario" id="comentario" rows="10" placeholder="Ingrese un comentario"></textarea>
                                 <div class="text-center">
-                                    <input type="submit" class="btn btn-color" value="Enviar">
+                                    <input type="button" class="btn btn-color" value="Enviar">
                                 </div>
                             </form>
                         </div>
@@ -121,6 +121,9 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
     </script>
+
+        <!--validacion de capos vacios-->
+        <script type="text/javascript" src="js/validacion.js"></script>
 
     <?php
         include '../../includes/footer/footer.php';
