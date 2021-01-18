@@ -16,7 +16,7 @@
             }            
         }
 
-        $sel=$conn->query("SELECT `cart_item`.`id_carrito`, `tbldiseñohechos`.`nombre` as `productos`, `cart_item`.`quantity` as `cantidad`, `tbldiseñohechos`.`valor` as `Valor`, `tblcliente`.`nombre` as `cliente`
+        $sel=$conn->query("SELECT `cart_item`.`id_carrito`, `tbldiseñohechos`.`nombre` as `productos`, `cart_item`.`quantity` as `cantidad`, `cart_item`.`imagen`, `tbldiseñohechos`.`valor` as `Valor`, `tblcliente`.`nombre` as `cliente`
         FROM `cart_item` 
             LEFT JOIN `tbldiseñohechos` ON `cart_item`.`cod_diseño_hecho` = `tbldiseñohechos`.`cod_diseño_hecho` 
             LEFT JOIN `tblcliente` ON `cart_item`.`id` = `tblcliente`.`id` WHERE `cart_item`.`id` = $_SESSION[id]");
@@ -28,9 +28,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estilos</title>
+    <title>Carrito</title>
 
-    <link rel="icon" type="image/png" href="../../img/atipika-icon.png">
+    <link rel="icon" type="image/png" href="../img/atipika-icon.png">
 
     <!--importacion boostrap-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
@@ -58,6 +58,7 @@
                 <div class="mt-4">
                     <table class="table table-hover">
                         <thead class="thead">
+                            <th>Imagen</th>
                             <th>Productos</th>
                             <th>Cantidad</th>
                             <th>Valor</th>
@@ -66,11 +67,13 @@
 
                         $cont=0;
                         while ($fila = $sel -> fetch_assoc()) {
+                            //VARIABLES DEL ARRAY PARA EL CORREO
                             $productos[$cont]['prenda']=$fila['productos'];
                             $productos[$cont]['cantidad']=$fila['cantidad'];
                             $productos[$cont]['valor']=$fila['Valor'];
                         ?>
                         <tr>
+                            <td><img style="width: 130px; height:150px;" src="<?php echo $urlimagen.$fila['imagen'] ?>" alt="<?php echo $fila['productos'] ?>"></td>
                             <td><?php echo $fila['productos'] ?></td>
                             <td><?php echo $fila['cantidad'] ?></td>
                             <td><?php echo $fila['Valor'] ?></td>
@@ -80,6 +83,7 @@
                             $cont++;
                         }
                         if (isset($productos)){
+                            //VARIABLE DE SESION PARA EL CORREO
                             $_SESSION['productos']=$productos;
                         }
                         ?>

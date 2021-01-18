@@ -11,13 +11,14 @@
     }
         
 $cod_diseño_hecho=$_GET['id'];
+$img=$_GET['img'];
 
 $hoy = date("Y-m-d-H-i-s");
 
-$insert=$conn->query("INSERT INTO cart_item (cod_diseño_hecho, quantity, id , created, modified) VALUES ( '$cod_diseño_hecho', 1, '$_SESSION[id]', '$hoy', '$hoy' )");
+$insert=$conn->query("INSERT INTO cart_item (cod_diseño_hecho, quantity, imagen, id , created, modified) VALUES ( '$cod_diseño_hecho', 1, '$img', '$_SESSION[id]', '$hoy', '$hoy' )");
 
 if ($insert){
-    echo "<script> location.href='../index.php?msg=1'; </script>";
+    // echo "<script> location.href='../index.php?msg=1'; </script>";
 }else{
     echo "Error: " . $insert . "<br>". $conn->error;
     //echo "<script> location.href='estilos.php'; </script>";

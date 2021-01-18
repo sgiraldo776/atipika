@@ -93,7 +93,7 @@
                                                 </p> -->
 
                             <div class="align-items-center text-center mt-2">
-                                <a href="carrito/agregar.php?id=<?php echo $fila['cod_diseño_hecho'] ?>"><button class="btn-color">añadir carrito</button></a>
+                                <a href="carrito/agregar.php?id=<?php echo $fila['cod_diseño_hecho'] ?>&img=<?php echo $fila['imagen'] ?>"><button class="btn-color">añadir carrito</button></a>
                                 <a href="vistas/estilos/estilos.php"><button class="btn-color">Ver más</button></a>
                             </div>
                         </div>
