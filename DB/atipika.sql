@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-01-2021 a las 17:06:28
+-- Tiempo de generación: 18-01-2021 a las 10:53:17
 -- Versión del servidor: 10.4.14-MariaDB
 -- Versión de PHP: 7.4.9
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `atipika`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cart_item`
+--
+
+CREATE TABLE `cart_item` (
+  `id_carrito` int(11) NOT NULL,
+  `cod_diseño_hecho` int(11) NOT NULL,
+  `quantity` double NOT NULL,
+  `imagen` varchar(200) NOT NULL,
+  `id` varchar(20) NOT NULL,
+  `created` datetime NOT NULL,
+  `modified` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cart_item`
+--
+
+INSERT INTO `cart_item` (`id_carrito`, `cod_diseño_hecho`, `quantity`, `imagen`, `id`, `created`, `modified`) VALUES
+(11, 11, 1, '', '1036424415', '2021-01-14 09:43:42', '2021-01-14 09:43:42'),
+(13, 12, 1, '', '1036424415', '2021-01-15 09:34:09', '2021-01-15 09:34:09');
 
 -- --------------------------------------------------------
 
@@ -42,7 +66,8 @@ CREATE TABLE `tblcliente` (
 --
 
 INSERT INTO `tblcliente` (`id`, `nombre`, `apellidos`, `celular`, `correo`, `contrasena`, `rol`) VALUES
-('1036424415', 'mauricio', 'castaño', '31424514', 'asdasda@gmail.com', '123', 1);
+('1036424415', 'mauricio', 'castaño', '31424514', 'maurox952@gmail.com', '123', 1),
+('5550123', 'jose', 'castaño', '3146244922', 'maurox9522@gmail.com', '123', 2);
 
 -- --------------------------------------------------------
 
@@ -61,8 +86,10 @@ CREATE TABLE `tbldiseño` (
 --
 
 INSERT INTO `tbldiseño` (`cod_diseño`, `nombre`, `imagen`) VALUES
-(4, 'joselo', '20201228092748icono.png'),
-(5, 'joselo', '20201230101027policia.png');
+(1, 'Ninguno', 'ninguno.jpg'),
+(6, 'dibujo 1', '202101060909461.jpg'),
+(7, 'dibujo 2', '20210106091006dd2.jpg'),
+(8, 'dibujo 3', '20210106091021dd3.jpg');
 
 -- --------------------------------------------------------
 
@@ -71,8 +98,9 @@ INSERT INTO `tbldiseño` (`cod_diseño`, `nombre`, `imagen`) VALUES
 --
 
 CREATE TABLE `tbldiseñohechos` (
-  `cod_diseño` int(11) NOT NULL,
+  `cod_diseño_hecho` int(11) NOT NULL,
   `nombre` varchar(50) DEFAULT NULL,
+  `valor` decimal(8,2) NOT NULL,
   `imagen` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -80,11 +108,11 @@ CREATE TABLE `tbldiseñohechos` (
 -- Volcado de datos para la tabla `tbldiseñohechos`
 --
 
-INSERT INTO `tbldiseñohechos` (`cod_diseño`, `nombre`, `imagen`) VALUES
-(2, 'joselo', '20201228092423horda.jpg'),
-(3, 'jose2', '20201230094548Captura.PNG'),
-(4, 'Bloody stream', '20210104180422thumb-1920-1081458.jpg'),
-(8, 'Vento Aureo', '20210104180527thumb-1920-1081458.jpg');
+INSERT INTO `tbldiseñohechos` (`cod_diseño_hecho`, `nombre`, `valor`, `imagen`) VALUES
+(9, 'diseño 1', '10000.00', '202101060907311.jpg'),
+(10, 'diseño 2', '10000.00', '202101060907402.jpg'),
+(11, 'diseño 3', '10000.00', '202101060907503.jpg'),
+(12, 'diseño 4', '10000.00', '202101060908054.jpg');
 
 -- --------------------------------------------------------
 
@@ -123,8 +151,8 @@ CREATE TABLE `tblflor` (
 --
 
 INSERT INTO `tblflor` (`cod_flor`, `nombre`, `imagen`) VALUES
-(3, 'asdas', '20201228091456horda.jpg'),
-(4, 'empanada2', '20201230101929panada2.jpg');
+(1, 'Ninguno', 'ninguno.jpg'),
+(5, 'flor 1', '20210106091053flor 1.jpg');
 
 -- --------------------------------------------------------
 
@@ -143,8 +171,9 @@ CREATE TABLE `tblfondo` (
 --
 
 INSERT INTO `tblfondo` (`cod_fondo`, `nombre`, `imagen`) VALUES
-(11, 'asdas', '20201228092439horda.jpg'),
-(12, 'empanada', '20201230101539imaganes prueba.jpg');
+(1, 'Ninguno', 'ninguno.jpg'),
+(13, 'fondo 1', '20210106091115fondo 1.jpg'),
+(14, 'fondo 2', '20210106091200fondo 2.jpg');
 
 -- --------------------------------------------------------
 
@@ -170,7 +199,37 @@ CREATE TABLE `tblpedido` (
 --
 
 INSERT INTO `tblpedido` (`cod_pedido`, `id`, `cod_producto`, `talla`, `fecha`, `cod_estado`, `cod_diseño`, `cod_fondo`, `frase`, `cod_flor`) VALUES
-(1, '1036424415', 3, 'XXL', '2020-12-30', 1, 4, 12, 'me gustan las empanadas', 4);
+(3, '1036424415', 5, 'L', '2021-01-06', 1, 7, 13, 'me gustan las empanadas', 5),
+(6, '1036424415', 5, 'S', '2021-01-06', 1, 7, 14, 'me gustan las empanadas x2', 5),
+(8, '1036424415', 5, 'S', '2021-01-06', 1, 1, 1, 'me gustan las empanadas x4', 1),
+(9, '1036424415', 6, 'XXXL', '2021-01-06', 1, 6, 1, 'me gustan las empanadas x5', 1),
+(10, '1036424415', 5, 'S', '2021-01-06', 1, 6, 13, 'me gustan las empanadasqwq', 5),
+(11, '1036424415', 5, 'M', '2021-01-06', 1, 7, 1, 'me gustan las empanadasqwq', 1),
+(15, '1036424415', 6, 'M', '2021-01-07', 1, 1, 1, '', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `tblpedido_diseño_hecho`
+--
+
+CREATE TABLE `tblpedido_diseño_hecho` (
+  `id_pedido` int(11) NOT NULL,
+  `id_cliente` varchar(20) NOT NULL,
+  `cod_diseño_hecho` int(11) NOT NULL,
+  `fecha` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `tblpedido_diseño_hecho`
+--
+
+INSERT INTO `tblpedido_diseño_hecho` (`id_pedido`, `id_cliente`, `cod_diseño_hecho`, `fecha`) VALUES
+(5, '1036424415', 9, '2021-01-06'),
+(9, '1036424415', 9, '2021-01-07'),
+(10, '1036424415', 9, '2021-01-07'),
+(11, '1036424415', 9, '2021-01-07'),
+(13, '5550123', 9, '2021-01-12');
 
 -- --------------------------------------------------------
 
@@ -189,8 +248,8 @@ CREATE TABLE `tblproducto` (
 --
 
 INSERT INTO `tblproducto` (`cod_producto`, `nombre`, `imagen`) VALUES
-(3, 'joselo', '20201228092736horda.jpg'),
-(4, 'asdas', '20201230100347icono.png');
+(5, 'prenda 1', '202101060908247.jpg'),
+(6, 'prenda 2', '202101060908356.jpg');
 
 -- --------------------------------------------------------
 
@@ -216,6 +275,14 @@ INSERT INTO `tblrol` (`cod`, `nombre`) VALUES
 --
 
 --
+-- Indices de la tabla `cart_item`
+--
+ALTER TABLE `cart_item`
+  ADD PRIMARY KEY (`id_carrito`),
+  ADD KEY `cod_diseño_hecho` (`cod_diseño_hecho`),
+  ADD KEY `id` (`id`);
+
+--
 -- Indices de la tabla `tblcliente`
 --
 ALTER TABLE `tblcliente`
@@ -233,7 +300,7 @@ ALTER TABLE `tbldiseño`
 -- Indices de la tabla `tbldiseñohechos`
 --
 ALTER TABLE `tbldiseñohechos`
-  ADD PRIMARY KEY (`cod_diseño`);
+  ADD PRIMARY KEY (`cod_diseño_hecho`);
 
 --
 -- Indices de la tabla `tblestado`
@@ -266,6 +333,14 @@ ALTER TABLE `tblpedido`
   ADD KEY `fk_tblpedido_tblflor1_idx` (`cod_flor`);
 
 --
+-- Indices de la tabla `tblpedido_diseño_hecho`
+--
+ALTER TABLE `tblpedido_diseño_hecho`
+  ADD PRIMARY KEY (`id_pedido`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `cod_diseño_hecho` (`cod_diseño_hecho`);
+
+--
 -- Indices de la tabla `tblproducto`
 --
 ALTER TABLE `tblproducto`
@@ -282,16 +357,22 @@ ALTER TABLE `tblrol`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `cart_item`
+--
+ALTER TABLE `cart_item`
+  MODIFY `id_carrito` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
 -- AUTO_INCREMENT de la tabla `tbldiseño`
 --
 ALTER TABLE `tbldiseño`
-  MODIFY `cod_diseño` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `cod_diseño` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `tbldiseñohechos`
 --
 ALTER TABLE `tbldiseñohechos`
-  MODIFY `cod_diseño` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `cod_diseño_hecho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `tblestado`
@@ -303,25 +384,31 @@ ALTER TABLE `tblestado`
 -- AUTO_INCREMENT de la tabla `tblflor`
 --
 ALTER TABLE `tblflor`
-  MODIFY `cod_flor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cod_flor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `tblfondo`
 --
 ALTER TABLE `tblfondo`
-  MODIFY `cod_fondo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `cod_fondo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `tblpedido`
 --
 ALTER TABLE `tblpedido`
-  MODIFY `cod_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `cod_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `tblpedido_diseño_hecho`
+--
+ALTER TABLE `tblpedido_diseño_hecho`
+  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `tblproducto`
 --
 ALTER TABLE `tblproducto`
-  MODIFY `cod_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `cod_producto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tblrol`
@@ -332,6 +419,13 @@ ALTER TABLE `tblrol`
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `cart_item`
+--
+ALTER TABLE `cart_item`
+  ADD CONSTRAINT `cart_item_ibfk_1` FOREIGN KEY (`cod_diseño_hecho`) REFERENCES `tbldiseñohechos` (`cod_diseño_hecho`),
+  ADD CONSTRAINT `cart_item_ibfk_2` FOREIGN KEY (`id`) REFERENCES `tblcliente` (`id`);
 
 --
 -- Filtros para la tabla `tblcliente`
@@ -349,6 +443,13 @@ ALTER TABLE `tblpedido`
   ADD CONSTRAINT `fk_tblpedido_tblflor1` FOREIGN KEY (`cod_flor`) REFERENCES `tblflor` (`cod_flor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tblpedido_tblfondo1` FOREIGN KEY (`cod_fondo`) REFERENCES `tblfondo` (`cod_fondo`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_tblpedido_tblproducto1` FOREIGN KEY (`cod_producto`) REFERENCES `tblproducto` (`cod_producto`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Filtros para la tabla `tblpedido_diseño_hecho`
+--
+ALTER TABLE `tblpedido_diseño_hecho`
+  ADD CONSTRAINT `tblpedido_diseño_hecho_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `tblcliente` (`id`),
+  ADD CONSTRAINT `tblpedido_diseño_hecho_ibfk_2` FOREIGN KEY (`cod_diseño_hecho`) REFERENCES `tbldiseñohechos` (`cod_diseño_hecho`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
