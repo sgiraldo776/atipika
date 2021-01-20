@@ -7,6 +7,10 @@ $fila=$sel->fetch_assoc();
 
 $productos=$_SESSION['productos'];
 
+if ($_SESSION['productos']==0){
+    header( 'location:ver_carrito.php?msg=1');
+    die;
+}
 
 $asunto = "Nuevo pedido de ATIPIKA";
 $body = "<b>Hay un nuevo pedido de Atipika:</b> <br><br> <b>Datos del cliente:</b> <br> ".$fila['nombre']." ".$fila['apellidos']."<br>".$fila['celular']."<br>".$fila['correo']."<br><br> <b>Productos solicitados:</b> <br>
@@ -63,17 +67,18 @@ try {
 */
 
     // Content
-    $mail->isHTML(true);                                  // Set email format to HTML
-    $mail->Subject = $asunto;
-    $mail->Body    = $body;
-    $mail->charset = 'UTF-8';
-    
-    $mail->send();
-    $del = $conn -> query(" DELETE FROM cart_item WHERE id='$_SESSION[id]'");
-    echo "<script>alert('Pedido enviado exitosamente')</script>";
-    echo "<script> setTimeout(\"location.href='ver_carrito.php'\",1000)</script>";
-} catch (Exception $e) {
-    echo "<script>alert('No se pudo enviar el Pedido')</script>";
-    echo "<script> setTimeout(\"location.href='ver_carrito.php'\",1000)</script>";
-}
+        $mail->isHTML(true);                                  // Set email format to HTML
+        $mail->Subject = $asunto;
+        $mail->Body    = $body;
+        $mail->charset = 'UTF-8';
+        
+        $mail->send();
+        $del = $conn -> query(" DELETE FROM cart_item WHERE id='$_SESSION[id]'");
+        echo "<script>alert('Pedido enviado exitosamente')</script>";
+        echo "<script> setTimeout(\"location.href='ver_carrito.php'\",1000)</script>";
+    } catch (Exception $e) {
+        echo "<script>alert('No se pudo enviar el Pedido')</script>";
+        echo "<script> setTimeout(\"location.href='ver_carrito.php'\",1000)</script>";
+    }
+
 ?>

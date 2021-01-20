@@ -85,6 +85,8 @@
                         if (isset($productos)){
                             //VARIABLE DE SESION PARA EL CORREO
                             $_SESSION['productos']=$productos;
+                        }else{
+                            $_SESSION['productos']=0;
                         }
                         ?>
                     </table>
@@ -145,6 +147,36 @@
 
             }
         </script>
+
+
+        <?php
+        if(isset($_GET['msg'])){
+            if($_GET['msg']==1){
+        ?>
+
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Excelente...',
+                text: 'carrito vaCIO',
+            
+            })
+        </script>
+
+        <?php
+            }else{
+                if($_GET['msg']==2){
+        ?>
+
+        <script>
+            Swal.fire('No se pudo agregar al carrito')
+        </script>
+
+        <?php
+                }
+            }
+        }
+        ?>
 
 
     
