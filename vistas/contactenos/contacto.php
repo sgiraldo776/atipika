@@ -35,7 +35,7 @@
     <!-- Sweet alerts -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
-    <link rel="stylesheet" href="../../css/estilos.css">
+    <link rel="stylesheet" href="../../css/estilo.css">
 </head>
 <body>
     <section>
@@ -48,15 +48,15 @@
                                 <h3>Contáctenos</h3>
                             </div>
                             <form action="enviar_contacto.php" name="add_form" method="post" enctype="multipart/form-data">
-                                    <label class="mt-3">Nombres: </label>
-                                    <input class="form-control" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre"> 
-                                    <label class="mt-3">Correo: </label>
+                                    <label class="mt-3">Nombre </label>
+                                    <input class="form-control" type="text" name="nombres" id="nombres" placeholder="Ingrese su nombre y apellidos"> 
+                                    <label class="mt-3">Correo </label>
                                     <input class="form-control" type="email" name="correo" id="correo" placeholder="Ingrese su correo"> 
-                                    <label class="mt-3">Celular: </label>
+                                    <label class="mt-3">Celular </label>
                                     <input class="form-control" type="tel" name="celular" id="celular" placeholder="Ingrese su número de celular">
-                                    <label class="mt-3">Asunto: </label>
-                                    <input class="form-control" type="text" name="asunto" id="asunto" placeholder="Ingrese el Asunto"> 
-                                    <label class="mt-3">Comentario:</label>
+                                    <label class="mt-3">Asunto </label>
+                                    <input class="form-control" type="text" name="asunto" id="asunto" placeholder="Ingrese un asunto"> 
+                                    <label class="mt-3">Comentario</label>
                                     <textarea class="form-control" name="comentario" id="comentario" rows="10" placeholder="Ingrese un comentario"></textarea>
                                 <div class="text-center">
                                     <input type="button" class="btn btn-color" value="Enviar">

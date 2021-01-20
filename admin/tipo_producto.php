@@ -97,8 +97,8 @@ include '../conexion.php';
                     <h1 class="mt-4">Ingresar tipo de producto</h1>
                     <form action="controlador/ingresar_tproducto.php" name="add_form" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label>Nombre:</label>
-                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="Nombre del diseño" required>
+                            <label>Nombre</label>
+                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="Ingrese el tipo de diseño" required>
                         </div>
                         <div class="form-group">
                             

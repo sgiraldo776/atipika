@@ -96,7 +96,7 @@ include '../conexion.php';
                     <h1 class="mt-4">Ingresar diseño</h1>
                     <form action="controlador/ingresar_diseno.php" name="add_form" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label>Nombre:</label>
+                            <label>Nombre</label>
                                 <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="Nombre del diseño" required>
                         </div>
                         <div class="form-group">

@@ -96,8 +96,8 @@ include '../conexion.php';
                     <h1 class="mt-4">Ingresar diseño de flor</h1>
                     <form action="controlador/ingresar_flor.php" name="add_form" method="POST" enctype="multipart/form-data">
                         <div class="form-group">
-                            <label>Nombre:</label>
-                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="Nombre del diseño" required>
+                            <label>Nombre</label>
+                                <input type="text" id="pregunta" name="nombre" class="form-control" placeholder="Nombre de la flor" required>
                         </div>
                         <div class="form-group">
                                 <!-- <input type="file" name="img1" required> -->

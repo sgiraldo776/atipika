@@ -1,7 +1,7 @@
 <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-3 text-lg-left text-center copy">Atipika © 2020</div>
+                <div class="col-lg-3 text-lg-left text-center copy">Atipika © <script>document.write(new Date().getFullYear());</script></div>
                 <div class="col-lg-6 my-3 my-lg-0 text-lg-center text-center">
                     <a class="redes btn btn-social mx-3" href="https://cutt.ly/gjg4kjS" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a class="redes btn btn-social mx-3" href="wa.link/vtu4ai" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -13,4 +13,4 @@
                 </div>
             </div>
         </div>
-    </footer>
+    </footer> 

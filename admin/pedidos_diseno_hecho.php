@@ -94,7 +94,7 @@ include '../conexion.php';
                 
             <!-- /#page-content-wrapper -->
 
-            <div class="container-fluid">
+            <div class="container-fluid" style="overflow: scroll;">
                     <h1 class="mt-4">Lista de pedidos</h1>
                     
                     <div class="mt-4">
