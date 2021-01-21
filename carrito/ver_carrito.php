@@ -174,8 +174,8 @@
         <script>
             Swal.fire({
                 icon: 'error',
-                title: 'Excelente...',
-                text: 'carrito vaCIO',
+                title: 'Error...',
+                text: 'El carrito está vacio',
             
             })
         </script>
