@@ -50,6 +50,9 @@
                         Perfil
                     </button>
                     <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
+                        <a href="<?php echo $URL ?>vistas/perfil/perfil.php"><button class="dropdown-item" type="button">Mi perfil</button></a>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-left">
                         <a href="<?php echo $URL ?>vistas/login/cerrar_sesion.php"><button class="dropdown-item" type="button">Cerrar Sesión</button></a>
                     </div>
                 </div>
