@@ -320,3 +320,10 @@ nav a:hover {
     padding: 0.5rem;
     outline: none;
 }
+
+
+/* Perfil */
+
+.perfil {
+    background-color: #fff;
+}
