@@ -20,6 +20,7 @@
         FROM `cart_item` 
             LEFT JOIN `tbldiseñohechos` ON `cart_item`.`cod_diseño_hecho` = `tbldiseñohechos`.`cod_diseño_hecho` 
             LEFT JOIN `tblcliente` ON `cart_item`.`id` = `tblcliente`.`id` WHERE `cart_item`.`id` = $_SESSION[id]");
+        $suma=0;
 ?>
 
 <!DOCTYPE html>
@@ -77,6 +78,7 @@
                             <td><?php echo $fila['productos'] ?></td>
                             <td><?php echo $fila['cantidad'] ?></td>
                             <td><?php echo $fila['Valor'] ?></td>
+                            <?php $suma += $fila['Valor']; ?>
                             <td><a href="#" onclick="preguntar(<?php echo $fila['id_carrito']?>)"><button class="btn btn-color">Quitar</button></a></td>
                         </tr>
                         <?php
@@ -107,6 +109,9 @@
                       <input name="buttonType" value="SIMPLE" type="hidden"/>
                       <input name="signature" value="b64684f563f87ac51e9cea0ec249c5886ffd00a0e8da893ca940a0e5fe23acdb" type="hidden"/>
                     </form> -->
+                    <div class="container titulo">
+                        <h1>COP$<?php echo $suma ?>.00</h1>
+                    </div>
                     <a class="btn btn-color" href="enviar_pedido.php">Confirmar pedido</a>
                 </div>
             </div>
