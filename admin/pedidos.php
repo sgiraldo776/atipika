@@ -30,6 +30,12 @@ include '../conexion.php';
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+
+        <!-- data tables -->
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css">
+
+        
         
 
         <!-- Custom styles for this template -->
@@ -98,7 +104,7 @@ include '../conexion.php';
                     <h1 class="mt-4">Lista de pedidos</h1>
                     
                     <div class="mt-4">
-            <table class="table table-hover">
+            <table id="tabla" class="table table-hover">
                 <thead class="thead">
                     <th>Código</th>
                     <th>ID cliente</th>
@@ -232,6 +238,19 @@ include '../conexion.php';
     $("#wrapper").toggleClass("toggled");
     });
     </script>
+
+    <!-- data tables -->
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.js"></script>
+
+
+    <script>
+        $(document).ready( function () {
+        $('#tabla').DataTable();
+        } );
+
+    </script>
+
 
 
     <!-- pregunta antes de eliminar sweat alert -->

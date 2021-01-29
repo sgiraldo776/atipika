@@ -1,6 +1,8 @@
 <?php
     include '../conexion.php';
 
+    //include './payu/lib/PayU.php';
+
     session_start();
         if(!isset($_SESSION['rol'])){
             include '../../includes/header/header_inicio.php';
@@ -20,6 +22,22 @@
         FROM `cart_item` 
             LEFT JOIN `tbldiseñohechos` ON `cart_item`.`cod_diseño_hecho` = `tbldiseñohechos`.`cod_diseño_hecho` 
             LEFT JOIN `tblcliente` ON `cart_item`.`id` = `tblcliente`.`id` WHERE `cart_item`.`id` = $_SESSION[id]");
+            $suma = 0;
+
+            //Environment::setPaymentsCustomUrl("https://api.payulatam.com/payments-api/4.0/service.cgi");
+
+                                //Ingrese aquí el nombre del medio de pago
+                    //$parameters = array(
+                        //Ingrese aquí el identificador de la cuenta.
+                        //PayUParameters::PAYMENT_METHOD => "PSE",
+                        //Ingrese aquí el nombre del pais.
+                        //PayUParameters::COUNTRY => PayUCountries::CO,
+                    //);
+                    //$array=PayUPayments::getPSEBanks($parameters);
+                    //$banks=$array->banks;
+
+                    
+
 ?>
 
 <!DOCTYPE html>
@@ -66,17 +84,37 @@
                         <?php 
 
                         $cont=0;
-                        while ($fila = $sel -> fetch_assoc()) {
+                        
+                        while ($fila = $sel -> fetch_array()) {
                             //VARIABLES DEL ARRAY PARA EL CORREO
-                            $productos[$cont]['prenda']=$fila['productos'];
-                            $productos[$cont]['cantidad']=$fila['cantidad'];
-                            $productos[$cont]['valor']=$fila['Valor'];
+                            $productos[$cont]['prenda']=$fila[1];
+                            $productos[$cont]['cantidad']=$fila[2];
+                            $productos[$cont]['valor']=$fila[4];
+
+                        
                         ?>
                         <tr>
                             <td><img style="width: 130px; height:150px;" src="<?php echo $urlimagen.$fila['imagen'] ?>" alt="<?php echo $fila['productos'] ?>"></td>
-                            <td><?php echo $fila['productos'] ?></td>
-                            <td><?php echo $fila['cantidad'] ?></td>
-                            <td><?php echo $fila['Valor'] ?></td>
+                            <td><?php echo $fila[1] ?></td>
+                            <td><?php echo $fila[2] ?></td>
+                            <td><?php echo $fila[4] ?></td>
+                            <select name="" id="">
+                            <?php 
+                            foreach ($banks as $bank) {
+                            ?>
+                            <option value=<?php echo $bank-> pseCode ?>><?php echo $bank->description  ?></option>
+                            <?php
+                            } ?>
+                            
+                            </select>
+                            <?php
+
+                            
+
+                            $suma += $fila['4'];
+
+                            ?>
+
                             <td><a href="#" onclick="preguntar(<?php echo $fila['id_carrito']?>)"><button class="btn btn-color">Quitar</button></a></td>
                         </tr>
                         <?php
@@ -90,23 +128,46 @@
                         }
                         ?>
                     </table>
-                    <!-- <form method="post" action="https://gateway.payulatam.com/ppp-web-gateway/pb.zul" accept-charset="UTF-8">
-                      <input type="image" border="0" alt="" src="http://www.payulatam.com/img-secure-2015/boton_pagar_grande.png" onClick="this.form.urlOrigen.value = window.location.href;"/>
-                      <input name="buttonId" type="hidden" value="affFD8p0FpSuX8vKp0YtD466VeK5l2asFLU8jiUWhY7VhFt6iSD4cg=="/>
-                      <input name="merchantId" type="hidden" value="688863"/>
-                      <input name="accountId" type="hidden" value="691748"/>
-                      <input name="description" type="hidden" value="predas"/>
-                      <input name="referenceCode" type="hidden" value="0123"/>
-                      <input name="amount" type="hidden" value="26000.00"/>
-                      <input name="tax" type="hidden" value="0.00"/>
-                      <input name="taxReturnBase" type="hidden" value="0.00"/>
-                      <input name="shipmentValue" value="16000.00" type="hidden"/>
-                      <input name="currency" type="hidden" value="COP"/>
-                      <input name="lng" type="hidden" value="es"/>
-                      <input name="sourceUrl" id="urlOrigen" value="" type="hidden"/>
-                      <input name="buttonType" value="SIMPLE" type="hidden"/>
-                      <input name="signature" value="b64684f563f87ac51e9cea0ec249c5886ffd00a0e8da893ca940a0e5fe23acdb" type="hidden"/>
-                    </form> -->
+                        
+                       <?php
+
+                       $merchantId="508029";
+                       $ApiKey="4Vj8eK4rloUd272L48hsrarnUA";
+                       $referenceCode=date("Y-m-d H:i:s");
+                       $amount=$suma;
+                       $currency="COP";
+                       $correo=$_SESSION['correo'];
+
+                       $acum=$ApiKey."~".$merchantId."~".$referenceCode."~".$amount."~".$currency;
+
+                       $j=md5($acum);
+
+                       
+
+                       
+                       ?>
+
+                    
+                    <form method="post" action="https://sandbox.checkout.payulatam.com/ppp-web-gateway-payu">
+                    <input name="merchantId"    type="hidden"  value="<?php echo $merchantId ?>">
+                    <input name="ApiKey"    type="hidden"  value="<?php echo $ApiKey ?>">
+                    <input name="accountId"     type="hidden"  value="512321" >
+                    <input name="description"   type="hidden"  value="Test PAYU"  >
+                    <input name="referenceCode" type="hidden"  value="<?php echo $referenceCode ?>" >
+                    <input name="amount"        type="hidden"  value="<?php echo $amount ?>"   >
+                    <input name="tax"           type="hidden"  value="0"  >
+                    <input name="taxReturnBase" type="hidden"  value="0" >
+                    <input name="currency"      type="hidden"  value="<?php echo $currency ?>" >
+                    <input name="signature"     type="hidden"  value="<?php echo $j ?>" >
+                    <input name="test"          type="hidden"  value="1" >
+                    <input name="buyerEmail"    type="hidden"  value="<?php echo $correo ?>" >
+                    <input name="responseUrl"    type="hidden"  value="http://www.test.com/response" >
+                    <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" >
+                    <input name="Submit"        type="submit"  value="Enviar" >
+                    </form>
+                    <div class="container">
+                        <h1><?php echo $suma ?></h1>
+                    </div>
                     <a class="btn btn-color" href="enviar_pedido.php">Confirmar pedido</a>
                 </div>
             </div>
@@ -161,6 +222,100 @@
                         console.log("*NO se elimina*");
                     }
                 });
+
+            }
+
+            function pago() {
+                var datos = {
+   "language": "es",
+   "command": "SUBMIT_TRANSACTION",
+   "merchant": {
+      "apiKey": "iP2E89MC2Aw778MQnqvNNmX82l",
+      "apiLogin": "Q29u7Dg689zDt67"
+   },
+   "transaction": {
+      "order": {
+         "accountId": "512321",
+         "referenceCode": "TestPayU",
+         "description": "payment test",
+         "language": "es",
+         "signature": "7ee7cf808ce6a39b17481c54f2c57acc",
+         "notifyUrl": "http://www.tes.com/confirmation",
+         "additionalValues": {
+            "TX_VALUE": {
+               "value": 20000,
+               "currency": "COP"
+         },
+            "TX_TAX": {
+               "value": 3193,
+               "currency": "COP"
+         },
+            "TX_TAX_RETURN_BASE": {
+               "value": 16806,
+               "currency": "COP"
+         }
+         },
+         "buyer": {
+            "merchantBuyerId": "1",
+            "fullName": "First name and second buyer  name",
+            "emailAddress": "buyer_test@test.com",
+            "contactPhone": "7563126",
+            "dniNumber": "5415668464654",
+            "shippingAddress": {
+               "street1": "calle 100",
+               "street2": "5555487",
+               "city": "Medellin",
+               "state": "Antioquia",
+               "country": "CO",
+               "postalCode": "000000",
+               "phone": "7563126"
+            }
+         },
+         "shippingAddress": {
+            "street1": "calle 100",
+            "street2": "5555487",
+            "city": "Medellin",
+            "state": "Antioquia",
+            "country": "CO",
+            "postalCode": "0000000",
+            "phone": "7563126"
+         }
+      },
+      "payer": {
+         "merchantPayerId": "1",
+         "fullName": "First name and second payer name",
+         "emailAddress": "payer_test@test.com",
+         "contactPhone": "7563126",
+         "dniNumber": "5415668464654",
+         "billingAddress": {
+            "street1": "calle 93",
+            "street2": "125544",
+            "city": "Bogota",
+            "state": "Bogota DC",
+            "country": "CO",
+            "postalCode": "000000",
+            "phone": "7563126"
+         }
+      },
+      "creditCard": {
+         "number": "4097440000000004",
+         "securityCode": "321",
+         "expirationDate": "2014/12",
+         "name": "REJECTED"
+      },
+      "extraParameters": {
+         "INSTALLMENTS_NUMBER": 1
+      },
+      "type": "AUTHORIZATION_AND_CAPTURE",
+      "paymentMethod": "VISA",
+      "paymentCountry": "CO",
+      "deviceSessionId": "vghs6tvkcle931686k1900o6e1",
+      "ipAddress": "127.0.0.1",
+      "cookie": "pt1t38347bs6jc9ruv2ecpv7o2",
+      "userAgent": "Mozilla/5.0 (Windows NT 5.1; rv:18.0) Gecko/20100101 Firefox/18.0"
+   },
+   "test": false
+}
 
             }
         </script>
