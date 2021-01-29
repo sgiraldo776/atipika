@@ -163,12 +163,25 @@
                     <input name="buyerEmail"    type="hidden"  value="<?php echo $correo ?>" >
                     <input name="responseUrl"    type="hidden"  value="http://www.test.com/response" >
                     <input name="confirmationUrl"    type="hidden"  value="http://www.test.com/confirmation" >
-                    <input name="Submit"        type="submit"  value="Enviar" >
-                    </form>
-                    <div class="container">
+                    <?php
+
+                    if (!empty($suma)){
+                        ?>
+                        <input name="Submit" class="btn btn-color" type="submit"  value="Enviar" >
+                        <div class="container">
                         <h1><?php echo $suma ?></h1>
-                    </div>
-                    <a class="btn btn-color" href="enviar_pedido.php">Confirmar pedido</a>
+                        </div>
+                    <?php	
+                    }else{
+                        ?>
+                        <h1>carrito vacio sumerce</h1>
+                    <?php
+                    }
+                    ?>
+                    
+                    </form>
+                   
+                    <!-- <a class="btn btn-color" href="enviar_pedido.php">Confirmar pedido</a> -->
                 </div>
             </div>
         </div>
