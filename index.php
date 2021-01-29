@@ -111,10 +111,6 @@
 
     </section>
 
-    <section>
-    <iframe src="https://www.instagram.com/atipika_oficial/" width=290 height=250>Texto para cuando el navegador no conoce la etiqueta iframe</iframe>
-    </section>
-
     <?php
         include('includes/footer/footer.php');
     ?>
