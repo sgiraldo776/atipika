@@ -82,19 +82,7 @@
                     <td><?php echo $fila[1] ?></td>
                     <td><?php echo $fila[2] ?></td>
                     <td><?php echo $fila[4] ?></td>
-                    <select name="" id="">
-                        <?php 
-                            foreach ($banks as $bank) {
-                            ?>
-                        <option value=<?php echo $bank-> pseCode ?>><?php echo $bank->description  ?></option>
-                        <?php
-                            } ?>
-
-                    </select>
                     <?php
-
-                            
-
                             $suma += $fila['4'];
 
                             ?>
@@ -143,8 +131,8 @@
                 <input name="signature" type="hidden" value="<?php echo $j ?>">
                 <input name="test" type="hidden" value="1">
                 <input name="buyerEmail" type="hidden" value="<?php echo $correo ?>">
-                <input name="responseUrl" type="hidden" value="http://www.test.com/response">
-                <input name="confirmationUrl" type="hidden" value="http://www.test.com/confirmation">
+                <input name="responseUrl" type="hidden" value="http://localhost/atipika/">
+                <input name="confirmationUrl" type="hidden" value="<?php echo $URL ?>carrito/enviar_pedido.php">
                 <?php
 
                     if (!empty($suma)){
@@ -178,7 +166,7 @@
     <div class="my-5">
     </div>
 
-    <footer class="footer py-4 fixed-bottom">
+    <footer class="footer py-4">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-3 text-lg-left text-center copy">Atipika © <script>
