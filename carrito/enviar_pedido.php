@@ -1,3 +1,18 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sweet alerts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+</head>
+<body>
+    
+</body>
+</html>
+
 <?php
 session_start();
 include "../conexion.php";
@@ -74,8 +89,16 @@ try {
         
         $mail->send();
         $del = $conn -> query(" DELETE FROM cart_item WHERE id='$_SESSION[id]'");
-        echo "<script>alert('Pedido enviado exitosamente')</script>";
-        echo "<script> setTimeout(\"location.href='ver_carrito.php'\",1000)</script>";
+        //echo "<script>alert('Pedido enviado exitosamente')</script>";
+        echo "<script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Excelente...',
+                text: 'Se ha echo el pago correctamente.',
+            
+            })
+        </script>";
+        echo "<script> setTimeout(\"location.href='ver_carrito.php'\",2000)</script>";
     } catch (Exception $e) {
         echo "<script>alert('No se pudo enviar el Pedido')</script>";
         echo "<script> setTimeout(\"location.href='ver_carrito.php'\",1000)</script>";
